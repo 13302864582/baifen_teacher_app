@@ -121,9 +121,8 @@ xmlns:ptr="http://schemas.android.com/tools">
             style="@style/tv_xuehao"
              />
 
-
-
         <TextView
+            android:layout_marginLeft="@dimen/margin_8"
             app:layout_constraintLeft_toRightOf="@id/tv_xuehao"
             app:layout_constraintBaseline_toBaselineOf="@id/tv_xuehao"
             android:id="@+id/tv_total_xuedian_val"

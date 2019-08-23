@@ -11,6 +11,7 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.DocumentsContract;
@@ -34,6 +35,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+
+import androidx.core.content.FileProvider;
 
 public class SelectPicPopupWindow extends Activity implements OnClickListener {
 
@@ -73,6 +76,23 @@ public class SelectPicPopupWindow extends Activity implements OnClickListener {
         return true;
     }
 
+    /**
+     * 将文件转换成uri(支持7.0)
+     *
+     * @param mContext
+     * @param file
+     * @return
+     */
+    public static Uri getUriForFile(Context mContext, File file) {
+        Uri fileUri = null;
+        if (Build.VERSION.SDK_INT >= 24) {
+            fileUri = FileProvider.getUriForFile(mContext, "com.lantel.baifen.fileprovider", file);
+        } else {
+            fileUri = Uri.fromFile(file);
+        }
+        return fileUri;
+    }
+
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_take_photo://拍照
@@ -83,8 +103,7 @@ public class SelectPicPopupWindow extends Activity implements OnClickListener {
                             + System.currentTimeMillis() + ".png";
                     SharePerfenceUtil.getInstance().putString("out_file_path", out_file_path);
                     File mPhotoFile=new File(out_file_path);
-
-                    getImageByCamera.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(mPhotoFile));
+                    getImageByCamera.putExtra(MediaStore.EXTRA_OUTPUT, /*Uri.fromFile(mPhotoFile)*/getUriForFile(this,mPhotoFile));
                     // getImageByCamera.putExtra(MediaStore.EXTRA_VIDEO_QUALITY,
                     // 1);
                     // ContentValues values = new ContentValues();
@@ -111,7 +130,6 @@ public class SelectPicPopupWindow extends Activity implements OnClickListener {
                 }
                 break;
             case R.id.btn_cancel:
-
                 finish();
                 break;
         }
@@ -183,9 +201,6 @@ public class SelectPicPopupWindow extends Activity implements OnClickListener {
                     break;
             }
 
-
-
-
             if (TextUtils.isEmpty(path)) {
                 path = out_file_path;
             } else {   }
@@ -224,7 +239,6 @@ public class SelectPicPopupWindow extends Activity implements OnClickListener {
     /**
      * 根据Uri获取图片绝对路径，解决Android4.4以上版本Uri转换
      *
-     * @param activity
      * @param imageUri
      * @author yh
      * @date 2015-03-06

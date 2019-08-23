@@ -11,7 +11,7 @@ public class WxConstant {
 
 	public static final String APP_ID_QQ = "1104492609";
 
-	public static final String APP_ID_WW = "wx49cc3f8f84b2969f";
+	public static final String APP_ID_WW = "wx2b93f3241e1d2554";
 
 	// 微信分享
 	// AppID：wx49cc3f8f84b2969f
