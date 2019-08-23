@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <include layout="@layout/welearn_header_view"  android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.ucuxin.ucuxin.tec.function.homework.view.TecHomeWorkCheckCommonView
+        android:id="@+id/homework_check_common_grab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    
+    <View 
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dp"
+        android:background="#ccc"
+        android:layout_marginTop="10dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="13dp"
+            android:text="@string/time_limit_homework_check_text1"
+            android:textColor="#56585a"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/time_limit_tv_homework_grab"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="50"
+            android:textColor="#ef5234"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/time_limit_homework_check_text2"
+            android:textColor="#56585a"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/timesup_tv_homework_grab"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="30"
+            android:textColor="#ef5234"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/time_limit_homework_check_text3"
+            android:textColor="#56585a"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/time_limit_text_tv_homework_grab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="11" />
+
+        <Button
+            android:id="@+id/report_btn_homework_check_grab"
+            android:layout_width="55dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/jubao"
+            android:text="@string/text_report_title"
+            android:textColor="#1c2024"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/goto_this_homework_check_btn"
+        android:layout_width="179dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/goto_check_homework_btn_selector"
+        android:text="@string/goto_this_homework_check_text"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical" 
+        android:gravity="bottom"
+        >
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dp"
+            android:background="#ccc"
+            android:orientation="vertical" />
+
+        <RelativeLayout
+            android:id="@+id/layout_zhuyi"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_more"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"           
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text="注意 :"
+                android:textColor="#ff7200"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tv_botton"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="45dp"
+                android:text=""
+                android:textColor="#828282"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

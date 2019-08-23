@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="47dp"
+    android:background="#ffffff">
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/item_tv"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:text="遗传基因"
+        android:textColor="#6f6f6f"
+        android:textSize="13sp" />
+
+</RelativeLayout>

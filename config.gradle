@@ -1,0 +1,112 @@
+ext{
+ isMoudle = false
+
+ android = [
+         applicationId: "com.example.moudletest",
+         compileSdkVersion: 28,
+         buildeToolVersion: "27.0.2",
+         minSdkVersion: 16,
+         targetSdkVersion: 28,
+         versionCode: 1,
+         versionName: "1.0",
+         testInstrumentationRunner: "android.support.test.runner.AndroidJUnitRunner"
+ ]
+
+ dependencies = [
+         //测试
+         testImplementation_junit : "junit:junit:4.12",
+         androidTestImplementation_junit : "com.android.support.test:runner:1.0.2",
+         androidTestImplementation_espresso : "com.android.support.test.espresso:espresso-core:3.0.2",
+
+         //butterknife依赖
+         butterknife : "com.jakewharton:butterknife:10.1.0",
+         butterknifecompiler : "com.jakewharton:butterknife-compiler:10.1.0",
+
+         //appcompact依赖
+         appcompat : "androidx.appcompat:appcompat:1.0.0",
+
+         //constraintlayout依赖
+         constraintlayout : "com.android.support.constraint:constraint-layout:1.1.3",
+
+         //原生生命周期依赖
+         lifecycle : "android.arch.lifecycle:extensions:1.1.1",
+
+         // rxlifecycle依赖
+         rxlifecycle : "com.trello.rxlifecycle2:rxlifecycle-components:2.1.0",
+
+         // 必要retrofit依赖
+         retrofit : "com.squareup.retrofit2:retrofit:2.3.0" ,
+         // 必要rxjava2依赖
+         rxjava : "io.reactivex.rxjava2:rxjava:2.1.0",
+         // 必要rxandrroid依赖，切线程时需要用到
+         rxandroid : "io.reactivex.rxjava2:rxandroid:2.0.1" ,
+         // 必要依赖，retrofit和Rxjava结合必须用到
+         adapterRxjava : "com.squareup.retrofit2:adapter-rxjava2:2.3.0" ,
+         // 必要依赖，解析json字符所用
+         converterGson : "com.squareup.retrofit2:converter-gson:2.3.0" ,
+
+         // 组件路由，Arouter
+         arouter : "com.alibaba:arouter-api:1.4.1" ,
+         arouterCompiler : "com.alibaba:arouter-compiler:1.2.2",
+
+         // 组件事件总线，modulebus
+         modulebus : "com.cangwang.core:modulebus:2.0.0",
+
+         //Glide
+         glide : "com.github.bumptech.glide:glide:4.9.0",
+         glideCompiler : "com.github.bumptech.glide:compiler:4.9.0",
+
+         //材料设计
+         material :  "com.google.android.material:material:1.0.0+",
+
+         //Andpermission权限申请
+         permission : "com.yanzhenjie.permission:x:2.0.1",
+
+         //轮播图
+         banner : "com.youth.banner:banner:1.4.10",
+
+         //二维码
+         zxing : "com.github.yuzhiqiang1993:zxing:2.2.5",
+
+         //官方导航组件
+         navigationFragment : "android.arch.navigation:navigation-fragment:1.0.0-alpha01",
+         navigationUi : "android.arch.navigation:navigation-ui:1.0.0-alpha01",
+
+         //状态栏
+         immersionbar : "com.gyf.immersionbar:immersionbar:3.0.0-beta01",
+
+         // 七牛云上传
+         qiniu : "com.qiniu:qiniu-android-sdk:7.3.15",
+
+         //广告滚动
+         convenientbanner : "com.bigkoo:convenientbanner:2.1.5",
+         //滚动消息
+         noticeview : "com.github.czy1121:noticeview:1.1.0",
+         //日历
+         calendarview : "com.haibin:calendarview:3.6.2",
+
+         //弹窗
+         supportVfour : "androidx.legacy:legacy-support-v4:1.0.0",
+         FlycoDialogLib : "com.flyco.dialog:FlycoDialog_Lib:1.3.2@aar",
+
+         //图片查看控件
+         GestureView : "com.alexvasilkov:gesture-views:2.5.2",
+         //视频控件
+         NiceVieoPlayer : "com.github.xiaoyanger0825:NiceVieoPlayer:v2.2",
+         //富文本
+         Richtext : "com.zzhoujay.richtext:richtext:3.0.8",
+         //下载控件
+         Downloader : "com.excellence:downloader:1.2.0",
+         //loading动画
+         Loadingviewlib : "com.ldoublem.loadingview:loadingviewlib:1.0",
+
+         //api 'com.lqr.audio:library:1.0.0' 音频框架
+
+         //极光推送
+         Jpush : "cn.jiguang.sdk:jpush:3.3.2",
+         Jcore : "cn.jiguang.sdk:jcore:2.0.1",
+
+         //角标
+         ShortcutBadger : "me.leolin:ShortcutBadger:1.1.22@aar"
+ ]
+}

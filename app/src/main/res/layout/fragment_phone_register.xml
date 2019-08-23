@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/welearn_header_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/layout_input_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="31dp"
+        android:layout_marginRight="31dp"
+        android:layout_marginTop="45dp">
+
+        <RelativeLayout
+            android:id="@+id/layout_sub_input_phone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="80dp">
+
+            <EditText
+                android:id="@+id/phone_num_et_phone_register"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:drawableLeft="@drawable/icon_phone"
+                android:drawablePadding="15dp"
+                android:hint="@string/text_input_phone_num"
+                android:inputType="number"
+                android:maxLength="14"
+                android:padding="6dp"
+                android:singleLine="true"
+                android:textColor="#9e9e9e"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/delete_phone_iv"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_alignRight="@+id/phone_num_et_phone_register"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/common_dele"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="0dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/get_verificationcode_btn_phone_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="3dp"
+                android:background="@null"
+                android:text="@string/text_get_verification_code"
+                android:textColor="#fe4949"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/view_shuxian"
+                android:layout_width="0.1dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:background="#000000"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dp"
+        android:layout_alignLeft="@id/layout_input_phone"
+        android:layout_alignRight="@id/layout_input_phone"
+        android:layout_below="@id/layout_input_phone"
+        android:layout_marginLeft="31dp"
+        android:layout_marginRight="31dp"
+        android:background="#454545" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="31dp"
+        android:layout_marginRight="31dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/ver_code_et_phone_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="111"
+            android:background="@null"
+            android:drawableLeft="@drawable/icon_unsuo"
+            android:drawablePadding="15dp"
+            android:hint="@string/text_verification_code"
+            android:inputType="number"
+            android:maxLength="6"
+            android:padding="6dp"
+            android:singleLine="true"
+            android:textColor="#9e9e9e"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignLeft="@id/ver_code_et_phone_register"
+            android:layout_alignRight="@id/ver_code_et_phone_register"
+            android:layout_below="@id/ver_code_et_phone_register"
+            android:background="#454545" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="31dp"
+        android:layout_marginRight="31dp"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/phone_psw_et_phone_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:drawableLeft="@drawable/icon_suo"
+            android:drawablePadding="15dp"
+            android:hint="@string/text_password_hint"
+            android:inputType="textPassword"
+            android:maxLength="15"
+            android:padding="6dp"
+            android:singleLine="true"
+            android:textColor="#9e9e9e"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/iv_show_pwd"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/icon_open_eye" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignLeft="@id/phone_psw_et_phone_register"
+            android:layout_alignRight="@id/phone_psw_et_phone_register"
+            android:layout_below="@id/phone_psw_et_phone_register"
+            android:background="#454545" />
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/submit_reg_btn_phone_register"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginLeft="31dp"
+        android:layout_marginRight="31dp"
+        android:layout_marginTop="40dp"
+        android:background="@mipmap/btn_login_bg"
+        android:text="@string/text_regist_confirm"
+        android:textColor="#ffffff"
+        android:textSize="14sp" />
+
+</LinearLayout>

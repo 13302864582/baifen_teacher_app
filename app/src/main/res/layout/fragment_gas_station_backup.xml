@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ebebeb" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ebebeb"
+        android:orientation="vertical" >
+
+        <!-- 第一部分start -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/white"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/tec_course_container_gas"
+                android:layout_width="match_parent"
+                android:layout_height="65dip"
+                android:background="@drawable/bg_gasview_item_selector"
+                android:clickable="true" >
+
+                <ImageView
+                    android:id="@+id/tec_course_iv_gas"
+                    android:layout_width="30dip"
+                    android:layout_height="27dip"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="23.8dip"
+                    android:contentDescription="@null"
+                    android:src="@drawable/course_icon" />
+
+                <TextView
+                    android:id="@+id/tec_course_text_tv_gas"
+                    style="@style/welearn_Teacher_Gasstation_Title_Text_Style"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="15dip"
+                    android:layout_toRightOf="@id/tec_course_iv_gas"
+                    android:text="@string/tec_course_title_text" />
+
+                <TextView
+                    android:id="@+id/tec_course_tag_tv_gas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tec_course_text_tv_gas"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="11dip"
+                    android:layout_marginTop="5dip"
+                    android:layout_toRightOf="@id/tec_course_iv_gas"
+                    android:text="@string/tec_course_tag_text"
+                    android:textColor="@color/welearn_gray"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/tec_course_jiantou_iv_gas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="17dip"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_setting_jump" />
+
+                <ImageView
+                    android:id="@+id/tec_course_remind_iv_gas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="6dip"
+                    android:layout_toLeftOf="@id/tec_course_jiantou_iv_gas"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/teacher_remind_icon_img"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </LinearLayout>
+        <!-- 第一部分end -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dip"
+            android:background="#ebebeb"
+            android:contentDescription="@null" />
+
+        <!-- 第二部分start -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/white"
+            android:orientation="vertical" 
+            android:visibility="gone"
+            >
+
+            <RelativeLayout
+                android:id="@+id/pay_answer_container"
+                android:layout_width="match_parent"
+                android:layout_height="65dip"
+                android:background="@drawable/bg_gasview_item_selector"
+                android:clickable="true" >
+
+                <ImageView
+                    android:id="@+id/pay_answer"
+                    android:layout_width="30dip"
+                    android:layout_height="27dip"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="23.8dip"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_pay_answer" />
+
+                <LinearLayout
+                    android:id="@+id/pay_answer_textlin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="15dip"
+                    android:layout_toRightOf="@id/pay_answer" >
+
+                    <TextView
+                        android:id="@+id/pay_answer_text"
+                        style="@style/welearn_Teacher_Gasstation_Title_Text_Style"
+                        android:text="@string/text_ask_title" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:text="@string/text_fast_use"
+                        android:textColor="#fe4848"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/pay_answer_taglin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/pay_answer_textlin"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="11dip"
+                    android:layout_marginTop="5dip"
+                    android:layout_toRightOf="@id/pay_answer" >
+
+                    <TextView
+                        android:id="@+id/pay_answer_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_pay_answer_tip_teacher"
+                        android:textColor="@color/welearn_gray"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/pay_answer_tag2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="。累计答疑"
+                        android:textColor="@color/welearn_gray"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/pay_answer_tag3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#f0a62c"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/pay_answer_tag4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="道"
+                        android:textColor="@color/welearn_gray"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="17dip"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_setting_jump" />
+            </RelativeLayout>
+            <!-- 难题解答end -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="14dip"
+                android:layout_marginRight="14dip"
+                android:background="#dadada" />
+            <!-- 作业检查start -->
+
+            <RelativeLayout
+                android:id="@+id/homework_check_container"
+                android:layout_width="match_parent"
+                android:layout_height="65dip"
+                android:background="@drawable/bg_gasview_item_selector"
+                android:clickable="true" >
+
+                <ImageView
+                    android:id="@+id/homework_ic"
+                    android:layout_width="30dip"
+                    android:layout_height="27dip"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="23.8dip"
+                    android:contentDescription="@null"
+                    android:src="@drawable/icon_my_homework" />
+
+                <TextView
+                    android:id="@+id/homework_text"
+                    style="@style/welearn_Teacher_Gasstation_Title_Text_Style"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="15dip"
+                    android:layout_toRightOf="@+id/homework_ic"
+                    android:text="@string/teacher_home_work_check" />
+
+                <LinearLayout
+                    android:id="@+id/homework_taglin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homework_text"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="11dip"
+                    android:layout_marginTop="5dip"
+                    android:layout_toRightOf="@id/homework_ic"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/teacher_home_work_func_sub_title"
+                        android:textColor="@color/welearn_gray"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="17dip"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_setting_jump" />
+            </RelativeLayout>
+            <!-- 作业检查end -->
+        </LinearLayout>
+        <!-- 第二部分 end -->
+
+
+        <!-- 抢答 start -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/white"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/layout_responder"
+                android:layout_width="match_parent"
+                android:layout_height="65dip"
+                android:background="@drawable/bg_gasview_item_selector"
+                android:clickable="true" >
+
+                <ImageView
+                    android:id="@+id/iv_responder"
+                    android:layout_width="30dip"
+                    android:layout_height="27dip"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="23.8dip"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_pay_answer" />
+
+                <LinearLayout                    
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="15dip"
+                    android:layout_toRightOf="@id/iv_responder"
+                    android:orientation="vertical" >
+
+                    <TextView                        
+                        style="@style/welearn_Teacher_Gasstation_Title_Text_Style"
+                        android:text="@string/text_responder_title" />
+
+                    <TextView                        
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dip"
+                        android:text="@string/text_pay_answer_tip_teacher"
+                        android:textColor="@color/welearn_gray"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="17dip"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_setting_jump" />
+            </RelativeLayout>
+        </LinearLayout>
+        <!-- 抢答 end -->
+
+
+        <!-- 第三部分 start -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/white"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/my_qpad_container"
+                android:layout_width="match_parent"
+                android:layout_height="65dip"
+                android:background="@drawable/bg_gasview_item_selector"
+                android:clickable="true" >
+
+                <ImageView
+                    android:id="@+id/my_qpad"
+                    android:layout_width="30dip"
+                    android:layout_height="27dip"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="23.8dip"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_my_ask" />
+
+                <TextView
+                    android:id="@+id/my_qpad_text"
+                    style="@style/welearn_Teacher_Gasstation_Title_Text_Style"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="15dip"
+                    android:layout_toRightOf="@id/my_qpad"
+                    android:text="@string/text_my_qpad_tea" />
+
+                <TextView
+                    android:id="@+id/qpad_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/my_qpad_text"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="11dip"
+                    android:layout_marginTop="5dip"
+                    android:layout_toRightOf="@id/my_qpad"
+                    android:text="@string/text_my_qpad_tip_teacher"
+                    android:textColor="@color/welearn_gray"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="17dip"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_setting_jump" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="14dip"
+                android:layout_marginRight="14dip"
+                android:background="#dadada" />
+
+            <RelativeLayout
+                android:id="@+id/my_homework_check_container"
+                android:layout_width="match_parent"
+                android:layout_height="65dip"
+                android:background="@drawable/bg_gasview_item_selector"
+                android:clickable="true" >
+
+                <ImageView
+                    android:id="@+id/my_homework_ic"
+                    android:layout_width="30dip"
+                    android:layout_height="27dip"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="23.8dip"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_qa_hall" />
+
+                <TextView
+                    android:id="@+id/my_homework_text"
+                    style="@style/welearn_Teacher_Gasstation_Title_Text_Style"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="15dip"
+                    android:layout_toRightOf="@+id/my_homework_ic"
+                    android:text="@string/teacher_home_work_my_homework_func_title" />
+
+                <LinearLayout
+                    android:id="@+id/my_homework_taglin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/my_homework_text"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="11dip"
+                    android:layout_marginTop="5dip"
+                    android:layout_toRightOf="@id/my_homework_ic"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/teacher_home_work_my_homework_func_sub_title"
+                        android:textColor="@color/welearn_gray"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="17dip"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_setting_jump" />
+            </RelativeLayout>
+        </LinearLayout>
+        <!-- 第三部分 end -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#f3f3f3"
+            android:visibility="gone" />
+
+        <!-- 第四部分 start -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/white"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/answer_list_container"
+                android:layout_width="match_parent"
+                android:layout_height="65dip"
+                android:background="@drawable/bg_gasview_item_selector"
+                android:clickable="true" >
+
+                <ImageView
+                    android:id="@+id/excellent_selection"
+                    android:layout_width="30dip"
+                    android:layout_height="27dip"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="23.8dip"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_excellent_selction" />
+
+                <TextView
+                    android:id="@+id/excellent_selection_text"
+                    style="@style/welearn_Teacher_Gasstation_Title_Text_Style"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="15dip"
+                    android:layout_toRightOf="@id/excellent_selection"
+                    android:text="@string/text_excellent_selction" />
+
+                <TextView
+                    android:id="@+id/excellent_selection_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/excellent_selection_text"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="11dip"
+                    android:layout_marginTop="5dip"
+                    android:layout_toRightOf="@id/excellent_selection"
+                    android:text="@string/text_excellent_selction_tip_teacher"
+                    android:textColor="@color/welearn_gray"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/gotonext_iv_gas_mygold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="17dip"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_setting_jump" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="16dip"
+                android:background="#ebebeb"
+                android:contentDescription="@null" />
+
+            <Button
+                android:id="@+id/ip_change_debug_bt"
+                android:layout_width="match_parent"
+                android:layout_height="56dip"
+                android:background="@drawable/bg_add_answer_btn_selector"
+                android:text="改IP"
+                android:textColor="#000000"
+                android:visibility="gone" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ebebeb"
+                android:contentDescription="@null" />
+        </LinearLayout>
+        <!-- 第四部分end -->
+
+    </LinearLayout>
+
+</ScrollView>

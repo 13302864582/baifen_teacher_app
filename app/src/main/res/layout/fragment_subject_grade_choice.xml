@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef"
+    android:orientation="vertical" >
+
+    <include layout="@layout/welearn_header_view" android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="17dip"
+                android:text="@string/text_grade_primary"
+                android:textColor="#242424"
+                android:textSize="17sp" />
+
+            <RelativeLayout
+                android:id="@+id/primary_all_container"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="16dip"
+                android:background="@drawable/bg_grade_subject_selector"
+                android:clickable="true"
+                android:tag="3,0"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="36dip"
+                    android:gravity="center"
+                    android:text="@string/text_primary_subject_all"
+                    android:textColor="#242424"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/ic_choice_primary_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="36dip"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_choice"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <include
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/primary_all_subject_layout" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="17dip"
+                android:text="@string/text_grade_middle"
+                android:textColor="#242424"
+                android:textSize="17sp" />
+
+            <RelativeLayout
+                android:id="@+id/middle_english_container"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="16dip"
+                android:background="@drawable/bg_grade_subject_selector"
+                android:clickable="true"
+                android:tag="1,1" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="36dip"
+                    android:gravity="center"
+                    android:text="@string/text_subject_english"
+                    android:textColor="#242424"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/ic_choice_middle_english"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="36dip"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_choice"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#ececec" />
+
+            <RelativeLayout
+                android:id="@+id/middle_math_selector"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/bg_grade_subject_selector"
+                android:clickable="true"
+                android:tag="1,2" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="36dip"
+                    android:gravity="center"
+                    android:text="@string/text_subject_math"
+                    android:textColor="#242424"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/ic_choice_middle_math"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="36dip"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_choice"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#ececec" />
+
+            <RelativeLayout
+                android:id="@+id/middle_physical_container"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/bg_grade_subject_selector"
+                android:clickable="true"
+                android:tag="1,3" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="36dip"
+                    android:gravity="center"
+                    android:text="@string/text_subject_physical"
+                    android:textColor="#242424"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/ic_choice_middle_physical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="36dip"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_choice"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#ececec" />
+
+            <RelativeLayout
+                android:id="@+id/middle_chemistry_container"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/bg_grade_subject_selector"
+                android:clickable="true"
+                android:tag="1,4" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="36dip"
+                    android:gravity="center"
+                    android:text="@string/text_subject_chemistry"
+                    android:textColor="#242424"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/ic_choice_middle_chemistry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="36dip"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_choice"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#ececec" />
+
+            <RelativeLayout
+                android:id="@+id/middle_biology_container"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/bg_grade_subject_selector"
+                android:clickable="true"
+                android:tag="1,5" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="36dip"
+                    android:gravity="center"
+                    android:text="@string/text_subject_biology"
+                    android:textColor="#242424"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/ic_choice_middle_biology"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="36dip"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_choice"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="17dip"
+                android:text="@string/text_grade_high"
+                android:textColor="#242424"
+                android:textSize="17sp" />
+
+            <RelativeLayout
+                android:id="@+id/high_english_container"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="16dip"
+                android:background="@drawable/bg_grade_subject_selector"
+                android:clickable="true"
+                android:tag="2,1" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="36dip"
+                    android:gravity="center"
+                    android:text="@string/text_subject_english"
+                    android:textColor="#242424"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/ic_choice_high_english"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="36dip"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_choice"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#ececec" />
+
+            <RelativeLayout
+                android:id="@+id/high_math_container"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/bg_grade_subject_selector"
+                android:clickable="true"
+                android:tag="2,2" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="36dip"
+                    android:gravity="center"
+                    android:text="@string/text_subject_math"
+                    android:textColor="#242424"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/ic_choice_high_math"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="36dip"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_choice"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#ececec" />
+
+            <RelativeLayout
+                android:id="@+id/high_physical_container"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/bg_grade_subject_selector"
+                android:clickable="true"
+                android:tag="2,3" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="36dip"
+                    android:gravity="center"
+                    android:text="@string/text_subject_physical"
+                    android:textColor="#242424"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/ic_choice_high_physical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="36dip"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_choice"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#ececec" />
+
+            <RelativeLayout
+                android:id="@+id/high_chemistry_container"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/bg_grade_subject_selector"
+                android:clickable="true"
+                android:tag="2,4" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="36dip"
+                    android:gravity="center"
+                    android:text="@string/text_subject_chemistry"
+                    android:textColor="#242424"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/ic_choice_high_chemistry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="36dip"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_choice"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#ececec" />
+
+            <RelativeLayout
+                android:id="@+id/high_biology_container"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginBottom="16dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/bg_grade_subject_selector"
+                android:clickable="true"
+                android:tag="2,5" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="36dip"
+                    android:gravity="center"
+                    android:text="@string/text_subject_biology"
+                    android:textColor="#242424"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/ic_choice_high_biology"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="36dip"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_choice"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

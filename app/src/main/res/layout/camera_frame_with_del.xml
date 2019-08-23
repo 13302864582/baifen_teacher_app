@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="28dip"
+    android:layout_height="28dip"
+     >
+
+    <ImageView
+        android:id="@+id/bg_camera_frame"
+          android:layout_width="28dip"
+            android:layout_height="28dip"
+            android:src="@drawable/add_point_ic_tec"
+            android:contentDescription="@null"
+            android:gravity="top|right" />
+       
+
+</FrameLayout>

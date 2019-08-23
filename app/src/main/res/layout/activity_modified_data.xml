@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <include  android:layout_width="match_parent"
+        android:layout_height="wrap_content" layout="@layout/welearn_header_view" />
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/avatar_iv_modified"
+            android:layout_width="@dimen/info_persion_icon_size"
+            android:layout_height="@dimen/info_persion_icon_size"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:adjustViewBounds="false"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/default_contact_image" />
+
+        <TextView
+            android:id="@+id/change_avatar_btn_modified"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="13dp"
+            android:text="更换头像"
+            android:textColor="#fe4949"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/nick_et_modified"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/pay_answer_et_selector"
+                android:gravity="center_vertical"
+                android:hint="昵称"
+                android:maxLength="12"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="#6f6f6f"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:id="@+id/change_sex_btn_modified"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="11dp"
+                android:background="@drawable/pay_answer_et_selector"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/stu_info_item_title_sex"
+                    android:textColor="#6f6f6f"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/sex_tv_modified"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="男"
+                    android:textColor="#6f6f6f"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="13dp"
+                    android:src="@drawable/class_more_icon" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/change_xueli_btn_modified"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="11dp"
+                android:background="@drawable/pay_answer_et_selector"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/tec_info_level"
+                    android:textColor="#6f6f6f"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/xueli_tv_modified"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/edulevel1"
+                    android:textColor="#6f6f6f"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="13dp"
+                    android:src="@drawable/class_more_icon" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/change_school_btn_modified"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="11dp"
+                android:background="@drawable/pay_answer_et_selector"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/tec_info_school"
+                    android:textColor="#6f6f6f"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/school_et_modified"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请输入您的学校"
+                    android:maxLength="12"
+                    android:singleLine="true"
+                    android:textColor="#6f6f6f"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/change_major_btn_modified"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="11dp"
+                android:background="@drawable/pay_answer_et_selector"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/tec_info_major"
+                    android:textColor="#6f6f6f"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/major_et_modified"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请输入您的专业"
+                    android:maxLength="12"
+                    android:singleLine="true"
+                    android:textColor="#6f6f6f"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/save_btn_modified"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="11dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginTop="39dp"
+            android:background="@mipmap/btn_login_bg"
+            android:gravity="center"
+            android:text="保存"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</ScrollView>

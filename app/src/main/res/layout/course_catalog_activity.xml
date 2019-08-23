@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/welearn_header_view" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:layout_margin="5dp" >
+
+        <TextView
+            android:id="@+id/null_class_view_catalog"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#1d9c9b"
+            android:gravity="center"
+            android:text="您还没有上传课时"
+            android:textColor="#ffc18c"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:id="@+id/have_class_view_catalog"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#1d9c9b"
+            android:gravity="center"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="共"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/total_num_tv_catalog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="20"
+                android:textColor="#ff3e3e"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="课时，已上传"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/done_num_tv_catalog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="5"
+                android:textColor="#ff3e3e"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="课时"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <ListView
+        android:id="@+id/class_lv_catalog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="11" >
+    </ListView>
+
+    <Button
+        android:id="@+id/add_new_class_btn_catalog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/upload_class_btn_selector"
+        android:gravity="center"
+        android:text="上传新课时" android:layout_margin="20dp"
+        android:textColor="@color/white" />
+
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        android:layout_width="28dip"
+        android:layout_height="28dip" >
+
+        <ImageView
+            android:id="@+id/right_point_iv"
+            android:layout_width="28dip"
+            android:layout_height="28dip"
+            android:contentDescription="@null"
+            android:src="@drawable/dui_1" />
+
+        <ImageView
+            android:id="@+id/wrong_point_iv"
+            android:layout_width="28dip"
+            android:layout_height="28dip"
+            android:contentDescription="@null"
+            android:src="@drawable/cuo" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/gointo_btn_rightwrong_point"
+        android:layout_width="28dip"
+        android:layout_height="28dip"
+        android:src="@drawable/gointo_point_btn_ic"
+        android:visibility="gone" />
+
+</LinearLayout>

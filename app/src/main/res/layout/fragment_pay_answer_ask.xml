@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include  android:layout_width="match_parent"
+        android:layout_height="wrap_content" layout="@layout/welearn_header_view" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="14dip"
+        android:paddingRight="14dip" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dip"
+            android:text="@string/text_take_photo_for_ask"
+            android:textColor="#3c3c3c"
+            android:textSize="15sp" />
+
+        <FrameLayout
+            android:layout_width="85dip"
+            android:layout_height="85dip" >
+
+            <ImageView
+                android:id="@+id/take_photo_btn"
+                android:layout_width="63dip"
+                android:layout_height="63dip"
+                android:layout_gravity="center"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/bg_add_photo_selector" />
+
+            <ImageView
+                android:id="@+id/question_img_del"
+                android:layout_width="22dip"
+                android:layout_height="22dip"
+                android:layout_gravity="top|right"
+                android:background="@drawable/ic_camera_choice_del_selector"
+                android:contentDescription="@null"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <EditText
+            android:id="@+id/descript_et_payask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:background="@drawable/bg_msg_recv_selector"
+            android:hint="@string/text_ask_des"
+            android:maxLength="24"
+            android:paddingLeft="18dp"
+            android:singleLine="true"
+            android:textColor="#ababab"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/subject_choice_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dip"
+            android:textColor="#3c3c3c"
+            android:textSize="15sp" />
+
+        <RadioGroup
+                    android:id="@+id/ask_subjects_radiogroup"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="15dp" />
+        
+<!--         <LinearLayout -->
+<!--             android:layout_width="match_parent" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:layout_marginTop="12dip" -->
+<!--             android:gravity="center_horizontal" > -->
+
+<!--             <TextView -->
+<!--                 android:id="@+id/subject_english" -->
+<!--                 android:layout_width="wrap_content" -->
+<!--                 android:layout_height="28dip" -->
+<!--                 android:layout_weight="1" -->
+<!--                 android:background="@drawable/bg_subject_choice_normal_btn" -->
+<!--                 android:gravity="center" -->
+<!--                 android:tag="1" -->
+<!--                 android:text="@string/text_subject_english" -->
+<!--                 android:textColor="#979797" /> -->
+
+<!--             <TextView -->
+<!--                 android:id="@+id/subject_math" -->
+<!--                 android:layout_width="wrap_content" -->
+<!--                 android:layout_height="28dip" -->
+<!--                 android:layout_marginLeft="7dip" -->
+<!--                 android:layout_marginRight="7dip" -->
+<!--                 android:layout_weight="1" -->
+<!--                 android:background="@drawable/bg_subject_choice_normal_btn" -->
+<!--                 android:gravity="center" -->
+<!--                 android:tag="2" -->
+<!--                 android:text="@string/text_subject_math" -->
+<!--                 android:textColor="#979797" /> -->
+
+<!--             <TextView -->
+<!--                 android:id="@+id/subject_physical" -->
+<!--                 android:layout_width="wrap_content" -->
+<!--                 android:layout_height="28dip" -->
+<!--                 android:layout_marginRight="7dip" -->
+<!--                 android:layout_weight="1" -->
+<!--                 android:background="@drawable/bg_subject_choice_normal_btn" -->
+<!--                 android:gravity="center" -->
+<!--                 android:tag="3" -->
+<!--                 android:text="@string/text_subject_physical" -->
+<!--                 android:textColor="#979797" /> -->
+
+<!--             <TextView -->
+<!--                 android:id="@+id/subject_chemistry" -->
+<!--                 android:layout_width="wrap_content" -->
+<!--                 android:layout_height="28dip" -->
+<!--                 android:layout_marginRight="7dip" -->
+<!--                 android:layout_weight="1" -->
+<!--                 android:background="@drawable/bg_subject_choice_normal_btn" -->
+<!--                 android:gravity="center" -->
+<!--                 android:tag="4" -->
+<!--                 android:text="@string/text_subject_chemistry" -->
+<!--                 android:textColor="#979797" /> -->
+
+<!--             <TextView -->
+<!--                 android:id="@+id/subject_biology" -->
+<!--                 android:layout_width="wrap_content" -->
+<!--                 android:layout_height="28dip" -->
+<!--                 android:layout_weight="1" -->
+<!--                 android:background="@drawable/bg_subject_choice_normal_btn" -->
+<!--                 android:gravity="center" -->
+<!--                 android:tag="5" -->
+<!--                 android:text="@string/text_subject_biology" -->
+<!--                 android:textColor="#979797" /> -->
+<!--         </LinearLayout> -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dip"
+            android:text="@string/text_pay_answer_alert_tips_subject"
+            android:textColor="#9e9e9e"
+            android:textSize="11sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dip"
+            android:text="@string/text_pay_answer_price"
+            android:textColor="#3c3c3c"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="159dip"
+            android:layout_height="50dip"
+            android:layout_marginTop="15dip"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/price_minus_btn"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_minus_price_btn_selector"
+                android:clickable="true"
+                android:contentDescription="@null" />
+
+            <TextView
+                android:id="@+id/question_price"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="1.0"
+                android:textColor="#fb0606"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/price_plus_btn"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_add_price_btn_selector"
+                android:clickable="true"
+                android:contentDescription="@null" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:text="@string/text_pay_answer_price_tips"
+            android:textColor="#9e9e9e"
+            android:textSize="11sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="17dp"
+            android:src="@drawable/ic_tips_pay_ask_laoshi" />
+    </LinearLayout>
+
+</LinearLayout>

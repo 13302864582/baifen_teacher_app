@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.navigation.NavigationView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nv_main_navigation"
+    android:layout_gravity="start"
+    app:itemBackground="?attr/selectableItemBackground"
+    android:layout_width="@dimen/drawer_width"
+    android:layout_height="match_parent"
+    app:headerLayout="@layout/drawer_header"
+    app:itemTextColor="@color/color_drawer_text"
+    app:menu="@menu/drawer_menu">
+
+</com.google.android.material.navigation.NavigationView>

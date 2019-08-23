@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:layout_centerInParent="true"
+        android:id="@+id/knowledge_group_item_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/knowledge_bg"
+        android:gravity="center"
+        android:text="遗传基因"
+        android:textColor="#6f6f6f"
+        android:textSize="13sp"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp" />
+
+    <ImageView
+        android:layout_marginLeft="-10dp"
+        android:layout_marginBottom="-20dp"
+        android:layout_toRightOf="@id/knowledge_group_item_tv"
+        android:layout_above="@id/knowledge_group_item_tv"
+        android:id="@+id/knowledge_group_item_iv"
+        android:layout_width="18dp"
+        android:layout_height="18dp" 
+        android:src="@drawable/close_icon"/>
+
+</RelativeLayout>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/welearn_header_view"
+        android:visibility="gone" />
+    <ScrollView
+        android:background="@mipmap/bg_homework"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <com.ucuxin.ucuxin.tec.function.homework.view.TecHomeWorkCheckCommonView
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/homework_check_common"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                app:layout_constraintTop_toBottomOf="@id/homework_check_common"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:id="@+id/jubao"
+                    android:padding="@dimen/margin_8"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+                    <TextView
+                        android:id="@+id/xinyong_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/change_homework_text"
+                        android:textColor="@color/red"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:layout_marginLeft="@dimen/margin_8"
+                        android:id="@+id/report_btn_homework_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/jubao"
+                        android:layout_toRightOf="@+id/xinyong_tip"
+                        android:text="举报此题"
+                        android:padding="5dp"
+                        android:textColor="@color/red"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/reward_tip"
+                    android:layout_marginLeft="@dimen/margin_8"
+                    android:layout_marginRight="@dimen/margin_8"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/jubao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin_8"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:layout_centerVertical="true"
+                        android:id="@+id/iv_bottom_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/biao" />
+
+                    <TextView
+                        android:layout_centerVertical="true"
+                        android:id="@+id/tv_botton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="45dp"
+                        android:textColor="#B3873D"
+                        android:textSize="9sp" />
+                </RelativeLayout>
+
+                <Button
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/reward_tip"
+                    android:id="@+id/grab_btn_homework_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/btn_qiang"
+                    android:gravity="center"
+                    android:text="抢作业"
+                    android:paddingBottom="8dp"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp" />
+
+                <Button
+                    app:layout_constraintTop_toBottomOf="@id/grab_btn_homework_check"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:id="@+id/change_btn_homework_check"
+                    android:paddingBottom="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@mipmap/btn_huan"
+                    android:text="换作业"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp" />
+
+
+                <!--<LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical" >
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.1dp"
+                        android:background="#ccc"
+                        android:orientation="vertical" />
+
+
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/tv_0"
+                            android:layout_width="60dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/ic_get_verificate_bt_pressed"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="#ffffff"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tv_1"
+                            android:layout_width="60dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@id/tv_0"
+                            android:background="@drawable/ic_get_verificate_bt_pressed"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="#ffffff"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tv_2"
+                            android:layout_width="60dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@id/tv_1"
+                            android:background="@drawable/ic_get_verificate_bt_pressed"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="#ffffff"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tv_3"
+                            android:layout_width="60dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@id/tv_2"
+                            android:background="@drawable/ic_get_verificate_bt_pressed"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="#ffffff"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tv_more"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:gravity="center"
+                            android:text="更多"
+                            android:textColor="#000"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                </LinearLayout>-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</LinearLayout>

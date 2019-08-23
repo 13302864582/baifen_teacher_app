@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dip"
+    android:paddingTop="10dip" >
+
+    <RelativeLayout
+        android:id="@+id/send_msg_user_avatar_frame"
+        android:layout_width="55dip"
+        android:layout_height="55dip"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="7dp" >
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/send_msg_user_avatar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/send_msg_user_avatar_unread"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/message_num_bg"
+            android:gravity="center"
+            android:text="11"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/send_msg_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="9dip"
+        android:textColor="#686868"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="13dip"
+        android:layout_toLeftOf="@id/send_msg_time"
+        android:layout_toRightOf="@id/send_msg_user_avatar_frame"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/send_msg_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:textColor="#242424"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/send_msg_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dip"
+            android:singleLine="true"
+            android:textColor="#686868"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</RelativeLayout>

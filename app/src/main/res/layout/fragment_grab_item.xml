@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include android:layout_width="match_parent"
+        android:layout_height="wrap_content" layout="@layout/welearn_header_view" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.ucuxin.ucuxin.tec.view.PayAnswerCommonView
+                android:id="@+id/grab_item_common"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dip"
+                android:layout_marginTop="5.6dip" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_grab_answer_submit_area"
+                    android:textColor="#9e9e9e"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="（答题时限"
+                    android:textColor="#242424"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/timeslimit_tv_grab_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:gravity="center"
+                    android:text="30"
+                    android:textColor="#ff0000"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="分钟，还剩"
+                    android:textColor="#242424"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/timesup_tv_grab_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:gravity="center"
+                    android:text="30"
+                    android:textColor="#ff0000"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="分钟）"
+                    android:textColor="#242424"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="111" />
+
+                <TextView
+                    android:id="@+id/report_grab_item"
+                    android:layout_width="60dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="32dp"
+                    android:background="@drawable/jubao"
+                    android:clickable="true"
+                    android:enabled="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="@string/text_report_title"
+                    android:textColor="#ffffff"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/add_photo_btn_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/submit_answer_tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dip"
+                    android:layout_marginTop="10dip"
+                    android:textSize="8sp" />
+
+                <Button
+                    android:id="@+id/add_photo_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dip"
+                    android:layout_marginBottom="19dip"
+                    android:layout_marginLeft="12.6dip"
+                    android:layout_marginTop="11dip"
+                    android:background="@drawable/take_photo"
+                    android:contentDescription="@null"
+                    android:paddingLeft="0dp"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/grabitem_answer_pic_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="5.6dip" >
+
+                <ImageView
+                    android:id="@+id/grabitem_photo_view_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@null" />
+            </RelativeLayout>
+
+            <!-- 注意start -->
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="15dp"
+                android:gravity="bottom"
+                android:orientation="vertical" >
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@drawable/shape_xuxian"
+                    android:orientation="vertical" />
+
+                <RelativeLayout
+                    android:id="@+id/layout_zhuyi"
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tv_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:text="注意 :"
+                        android:textColor="#ff7200"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/tv_botton"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="45dp"
+                        android:text=""
+                        android:textColor="#828282"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+            </LinearLayout>
+            <!-- 注意end -->
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

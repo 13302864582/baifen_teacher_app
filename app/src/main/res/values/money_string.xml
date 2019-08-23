@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="not_dayu_total_money">输入的金额不能大于总学点</string>
+    <string name="diyu50_not_apply">低于50元不能申请提现</string>
+    <string name="nessary50_beishu_apply">输入 %s的倍数才能提现哦</string>
+    <string name="leater_zerenxin">责任心指数不足,不能提现</string>
+    <string name="empty_input_money">提现金额不能为空</string>
+</resources>

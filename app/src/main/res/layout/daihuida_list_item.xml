@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent" >
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ececec"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <LinearLayout
+            android:id="@+id/ll_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:layout_marginLeft="0dp"
+                android:src="@drawable/time_icon" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="10月19日  星期二"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_userinfo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp" >
+
+            <ImageView
+                android:id="@+id/iv_user_avatar"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/default_teacher_avatar"
+                android:layout_marginRight="8dp"
+                 />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_toRightOf="@id/iv_user_avatar"
+                android:text="何老师"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_grade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_name"
+                android:layout_marginRight="8dp"
+                android:layout_toRightOf="@id/iv_user_avatar"
+                android:text="初三"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_xuehao_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_name"
+                android:layout_toRightOf="@id/tv_grade"
+                android:text="学号:"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_xuehao_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_name"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_xuehao_title"
+                android:text="何老师"
+                android:textSize="12sp" />
+            
+            
+            <TextView
+                android:id="@+id/tv_has_zhuiwen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_name"
+                android:layout_marginLeft="5dp"
+                android:layout_alignParentRight="true"
+                android:text="有追问"
+                android:textSize="12sp"
+                android:textColor="@android:color/holo_red_light"
+                android:layout_marginRight="10dp"
+                 />
+            
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/teacher_state"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/rl_click"
+                android:layout_width="match_parent"
+                android:layout_height="116dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp" >
+
+                <ImageView
+                    android:id="@+id/iv_show"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="#ECECEC"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/load_img" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_pingjia"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true" >
+
+                    <RelativeLayout
+                        android:id="@+id/ll_pingjia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="116dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/encourage_bg" >
+
+                        <TextView
+                            android:id="@+id/tv_pingjia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="11dp"
+                            android:layout_marginRight="3dp"
+                            android:text="wreqwrq"
+                            android:textSize="12sp" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/iv_show"
+                    android:layout_marginLeft="6dp"
+                    android:layout_toRightOf="@+id/iv_show"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:id="@+id/ll_duicuo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/tv_dui"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/right_icon"
+                            android:text="  15"
+                            android:textColor="#FF5654"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/tv_cuo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:drawableLeft="@drawable/wrong_icon"
+                            android:text="  2"
+                            android:textColor="#F98733"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_zhengquelv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="正确率:"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/tv_zhengquelv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:text="100%"
+                            android:textColor="#01A3A5"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_subject"
+                android:layout_width="264dp"
+                android:layout_height="115dp"
+                android:orientation="horizontal" >
+            </LinearLayout>
+        </FrameLayout>
+
+   
+    </LinearLayout>
+
+</FrameLayout>

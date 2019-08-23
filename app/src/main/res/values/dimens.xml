@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<dimen name="top_title_height">42dip</dimen>
+	
+	<dimen name="welearn_title_bar_and_status_hight">48dip</dimen>
+	
+	<!-- 状态栏高度 -->
+    <dimen name="welearn_status_bar_height">0dp</dimen>
+    
+    <dimen name="welearn_title_bar_hight">48dip</dimen>
+    <dimen name="welearn_title_bar_back_padding_left">6dip</dimen>
+    
+    <dimen name="dialog_padding">40dp</dimen>
+
+    <dimen name="menu_persion_icon_size">64dp</dimen>
+    <dimen name="info_persion_icon_size">54dp</dimen>
+    <dimen name="msg_list_avatar_size">39dp</dimen>
+    <dimen name="communicate_contacts_list_avatar_size">48dp</dimen>
+    <dimen name="group_contacts_list_avatar_size">41dp</dimen>
+    <dimen name="purchase_student_list_avatar_size">35dp</dimen>
+    <dimen name="one_question_more_answer_detail_item_avatar_size">25dp</dimen>
+    <dimen name="pay_answer_user_avatar_size">30dp</dimen>
+    <dimen name="avatar_size_homework_check_common">48dp</dimen>
+    <dimen name="avatar_size_homeworkhall_item_common">35dp</dimen>
+    
+    <dimen name="append_user_avatar_size">25dp</dimen>
+    <dimen name="student_info_avatar_size">56dp</dimen>
+    <dimen name="teacher_center_avatar_size">59dp</dimen>
+    <dimen name="teacher_info_avatar_size">56dp</dimen>
+    <dimen name="question_list_avatar_size">35dp</dimen>
+    <dimen name="search_friends_list_avatar_size">47dp</dimen>
+
+ 	<dimen name="welearn_detail_head_height">160dp</dimen>
+ 	<dimen name="cramschool_detail_icon">80dp</dimen>
+    <dimen name="drawer_width">270dp</dimen>
+    <dimen name="drawer_icon">55dp</dimen>
+    <dimen name="tv_login_out">12sp</dimen>
+    <dimen name="arrow_width">7dp</dimen>
+    <dimen name="arrow_height">11dp</dimen>
+    <dimen name="drawer_username">13sp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="drawer_padding">40dp</dimen>
+    <dimen name="drawer_header_margin">11dp</dimen>
+    <!--     <dimen name="welearn_detail_move_min">73dp</dimen> -->
+    <dimen name="drawer_userid">9sp</dimen>
+ <dimen name="home_img">57dp</dimen>
+    <dimen name="tv_tixian">13sp</dimen>
+    <dimen name="tv_tixian_money">35sp</dimen>
+    <dimen name="btn_tixian">16sp</dimen>
+    <dimen name="toolbar_title">17sp</dimen>
+    <dimen name="tv_tixian_money_unit">20sp</dimen>
+    <dimen name="tv_head_name">14sp</dimen>
+    <dimen name="tv_head_info">10sp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+    <dimen name="margin_12">12dp</dimen>
+    <dimen name="tv_head_rule">8sp</dimen>
+    <dimen name="home_notify_tv">10sp</dimen>
+    <dimen name="home_notify_tv_width">200dp</dimen>
+    <dimen name="home_menu_tv">12sp</dimen>
+    <dimen name="tv_qiang">60sp</dimen>
+    <dimen name="tv_version">9sp</dimen>
+    <dimen name="tv_time">13sp</dimen>
+    <dimen name="iv_user_avatar">36dp</dimen>
+    <dimen name="tv_name">13sp</dimen>
+    <dimen name="tv_grade">9sp</dimen>
+    <dimen name="margin_4">4dp</dimen>
+    <dimen name="margin_2">2dp</dimen>
+    <dimen name="tab_height">45dp</dimen>
+    <dimen name="tv_teacher_name">14sp</dimen>
+    <dimen name="tv_xuehao">10sp</dimen>
+    <dimen name="tv_getguize">8sp</dimen>
+</resources>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/jiucuo_bg"
+        android:orientation="vertical"
+        android:minHeight="300dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/app_check_update_icon"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="有新版本啦!"
+                android:textColor="#f81828"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="20dp"
+            android:background="@null"
+            android:gravity="center_vertical|left"
+            android:lineSpacingExtra="5dp"
+            android:singleLine="false"
+            android:text=""
+            android:textColorHint="#acacac"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/jiucuo_line" />
+
+        <LinearLayout
+            android:id="@+id/layout_not_force_update"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_ok"
+                android:layout_width="110dp"
+                android:layout_height="37dp"
+                android:layout_marginRight="20.0dip"
+                android:background="#ff591f"
+                android:gravity="center"
+                android:text="升级"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btn_cancle"
+                android:layout_width="110dp"
+                android:layout_height="37dp"
+                android:background="#ff591f"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layout_force_update"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            >
+
+            <Button
+                android:id="@+id/btn_go_update"
+                android:layout_width="200dp"
+                android:layout_height="37dp"
+                android:layout_marginRight="30.0dip"
+                android:layout_marginLeft="30dp"
+                android:background="#ff591f"
+                android:gravity="center"
+                android:text="升级"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

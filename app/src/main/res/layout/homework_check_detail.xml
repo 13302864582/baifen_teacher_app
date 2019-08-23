@@ -1,0 +1,241 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical" >
+
+    <include layout="@layout/welearn_header_view" android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/layout_check_hw_tip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:visibility="gone"
+        >
+
+        <ImageView
+            android:id="@+id/iv_check_hw_tip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/check_hw_tips" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dots_ll"
+        android:layout_width="match_parent"
+        android:layout_height="23dp"
+        android:background="#000000"
+        android:gravity="center"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+    <com.ucuxin.ucuxin.tec.view.viewpager.MyViewPager
+        android:id="@+id/detail_pager_homework"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_weight="11"
+        android:background="#000000" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white" >
+
+        <LinearLayout
+            android:id="@+id/homework_detail_text_tec"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/detail_homework_desc_text"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/homework_detail_bottom_container_tec"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@color/white"
+            android:visibility="gone" >
+
+            <Button
+                android:id="@+id/wrong_detail_bottom_btn"
+                android:layout_width="105dp"
+                android:layout_height="34dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="14dp"
+                android:background="@drawable/wrong_btn_detail_selector"
+                android:paddingLeft="24dp"
+                android:text="答案错误"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/detail_homework_desc2_text"
+                android:textColor="#000000"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/right_detail_bottom_btn"
+                android:layout_width="105dp"
+                android:layout_height="34dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="14dp"
+                android:background="@drawable/right_btn_detail_selector"
+                android:paddingLeft="24dp"
+                android:text="答案正确"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/camare_container_tec"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:id="@+id/camare_btn_tec_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/camare_homework_btn_selector"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/camera_icon_tec_homework" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center_vertical"
+                    android:text="拍照解题过程"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/cancel_photo_btn_stu_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/refuse_homework_btn_selector"
+                android:gravity="center"
+                android:text="@string/text_camera_popupwindow_cancel"
+                android:visibility="gone" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/homework_detail_bottom_container_stu"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/stu_avatar_iv_stu_detail"
+            android:layout_width="@dimen/avatar_size_homework_check_common"
+            android:layout_height="@dimen/avatar_size_homework_check_common"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dip"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_default_avatar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="7dip"
+            android:layout_weight="11"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/stu_nick_tv_stu_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="昵称"
+                    android:maxLength="15"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/stu_grade_tv_stu_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:textColor="#808080"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/stu_num_tv_stu_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/ask_num_text"
+                android:textColor="#808080"
+                android:textSize="12sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/apply_arbitration_btn_stu_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/refuse_homework_btn_selector"
+            android:gravity="center"
+            android:text="@string/apply_arbitration_text"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/giveup_arbitration_btn_stu_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/adopt_homework_btn_selector"
+            android:gravity="center"
+            android:text="@string/giveup_arbitration_text"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</LinearLayout>

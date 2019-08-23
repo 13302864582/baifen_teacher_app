@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:ptr="http://schemas.android.com/tools">
+<androidx.appcompat.widget.Toolbar
+    android:background="@color/white"
+    android:id="@+id/toolbar"
+    android:elevation="1dp"
+    app:contentInsetStart="0dp"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ptr:layout_editor_absoluteY="16dp">
+
+        <TextView
+            style="@style/toolbar_title"
+            android:text="有笔教师版" />
+    </RelativeLayout>
+
+</androidx.appcompat.widget.Toolbar>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:padding="@dimen/margin_8"
+    android:id="@+id/info_card"
+    android:background="@mipmap/bg_home_info"
+    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+    app:layout_constraintHeight_percent="0.3"
+    android:layout_width="match_parent"
+    android:layout_height="0dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/head_bottom"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.90"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_tixian"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0.052"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:text="@string/tv_tixian"
+            style="@style/tv_tixian" />
+        <TextView
+            android:id="@+id/tv_ketixian_val"
+            style="@style/tv_tixian_money"
+            android:text="0.0"
+            app:layout_constraintTop_toBottomOf="@id/tv_tixian"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_tixian"
+            />
+        <TextView
+            android:id="@+id/tv_tixian_money_unit"
+            style="@style/tv_tixian_money_unit"
+            android:text="@string/tv_tixian_money_unit"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_ketixian_val"
+            app:layout_constraintLeft_toRightOf="@id/tv_ketixian_val"
+            />
+
+        <TextView
+            android:id="@+id/tv_gotixian"
+            style="@style/btn_tixian"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_ketixian_val"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="@string/btn_tixian"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        android:id="@+id/iv_teacher_avatar"
+        android:layout_width="@dimen/home_img"
+        android:layout_height="@dimen/home_img"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/head_bottom"/>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginLeft="@dimen/margin_8"
+        android:layout_marginRight="@dimen/margin_8"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/head_bottom"
+        app:layout_constraintLeft_toRightOf="@id/iv_teacher_avatar"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <TextView
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/tv_teacher_name"
+            style="@style/tv_teacher_name" />
+
+        <LinearLayout
+            android:layout_marginLeft="@dimen/margin_8"
+            android:id="@+id/layout_zerenxin_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_teacher_name"
+            app:layout_constraintLeft_toRightOf="@+id/tv_teacher_name"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/tv_teacher_name"
+            app:layout_constraintLeft_toLeftOf="@id/tv_teacher_name"
+            android:id="@+id/tv_xuehao"
+            style="@style/tv_xuehao"
+             />
+
+
+
+        <TextView
+            app:layout_constraintLeft_toRightOf="@id/tv_xuehao"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_xuehao"
+            android:id="@+id/tv_total_xuedian_val"
+            style="@style/tv_xuehao"/>
+
+        <TextView
+            android:padding="@dimen/margin_8"
+            android:text="@string/tv_head_rule"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_xuehao"
+            android:drawableRight="@mipmap/arrow_home"
+            android:id="@+id/tv_head_rule"
+            style="@style/tv_getguize" />
+
+        <TextView
+            android:layout_marginTop="@dimen/margin_8"
+            app:layout_constraintLeft_toLeftOf="@id/tv_xuehao"
+            app:layout_constraintTop_toBottomOf="@id/tv_xuehao"
+            android:id="@+id/tv_xinyong"
+            style="@style/tv_xuehao"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_gonggao"
+        android:background="@mipmap/bg_notify"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/info_card"
+        app:layout_constraintHeight_percent="0.051"
+        app:layout_constraintWidth_percent="0.93"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+        <ImageView
+            android:id="@+id/home_notify_icon"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0.027"
+            android:src="@mipmap/icon_notify"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="20dp"
+            android:layout_height="19dp" />
+        <com.ucuxin.ucuxin.tec.view.MarqueeTextView
+            android:id="@+id/tv_gonggao"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/home_notify_icon"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0.065"
+            style="@style/home_notify_tv"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_tousu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_gonggao"
+        app:layout_constraintWidth_percent="0.25">
+
+        <TextView
+            android:drawableTop="@mipmap/home_judge"
+            android:id="@+id/home_judge_tv"
+            style="@style/home_menu_tv"
+            android:elevation="2dp"
+            android:text="@string/home_judge"
+            app:layout_constraintWidth_percent="0.75"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+             />
+
+        <TextView
+            android:id="@+id/tv_youtousu"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/num"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.22" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_zhuiwen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.14"
+        app:layout_constraintStart_toEndOf="@id/layout_tousu"
+        app:layout_constraintTop_toTopOf="@id/layout_tousu"
+        app:layout_constraintWidth_percent="0.25">
+
+        <TextView
+            android:drawableTop="@mipmap/home_second_question"
+            app:layout_constraintWidth_percent="0.75"
+            style="@style/home_menu_tv"
+            android:elevation="2dp"
+            android:id="@+id/home_second_question_tv"
+            android:text="@string/home_second_question"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+             />
+
+        <TextView
+            android:id="@+id/tv_youzhuiwen"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/num"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.22" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_caina"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHeight_percent="0.14"
+        app:layout_constraintStart_toEndOf="@id/layout_zhuiwen"
+        app:layout_constraintTop_toTopOf="@id/layout_tousu"
+        app:layout_constraintWidth_percent="0.25">
+
+        <TextView
+            android:drawableTop="@mipmap/home_wait_confirm"
+            app:layout_constraintWidth_percent="0.75"
+            android:id="@+id/home_wait_confirm_tv"
+            android:elevation="2dp"
+            style="@style/home_menu_tv"
+            android:text="@string/home_wait_confirm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+             />
+
+        <TextView
+            android:id="@+id/tv_youcaina"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/num"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.22" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_news_message"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.14"
+        app:layout_constraintStart_toEndOf="@id/layout_caina"
+        app:layout_constraintTop_toTopOf="@id/layout_tousu"
+        app:layout_constraintWidth_percent="0.25">
+
+        <TextView
+            android:elevation="2dp"
+            android:drawableTop="@mipmap/home_message"
+            app:layout_constraintWidth_percent="0.75"
+            android:id="@+id/home_message_tv"
+            style="@style/home_menu_tv"
+            android:text="@string/home_message"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tv_hasxiaoxi"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/num"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.22" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_tousu">
+
+        <ImageView
+            android:id="@+id/iv_qiang"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@mipmap/bg_qiang"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.607"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.546" />
+
+        <TextView
+            android:id="@+id/tv_qiang"
+            style="@style/tv_qiang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_qiang"
+            app:layout_constraintBottom_toBottomOf="@id/iv_qiang"
+            app:layout_constraintLeft_toLeftOf="@id/iv_qiang"
+            app:layout_constraintRight_toRightOf="@id/iv_qiang"
+            app:layout_constraintTop_toTopOf="@id/iv_qiang"
+            app:layout_constraintVertical_bias="0.614" />
+
+        <TextView
+            android:id="@+id/tv_version"
+            style="@style/tv_version"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_qiang"
+            app:layout_constraintVertical_bias="0.8" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

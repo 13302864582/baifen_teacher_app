@@ -1,0 +1,37 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml:1:1-19:12
+INJECTED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml:1:1-19:12
+INJECTED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml:1:1-19:12
+	package
+		ADDED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml:2:5-41
+		INJECTED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml:1:11-69
+application
+ADDED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml:10:5-17:19
+	android:allowBackup
+		ADDED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml:11:9-35
+	android:theme
+		ADDED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml:12:9-40
+activity#com.alipay.android.app.sdk.WapPayActivity
+ADDED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml:13:9-16:20
+	android:screenOrientation
+		ADDED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml:15:13-49
+	android:name
+		ADDED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml:14:13-69
+uses-sdk
+INJECTED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml
+INJECTED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml
+INJECTED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml
+INJECTED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml
+		ADDED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml
+		ADDED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\fz\Documents\360\baifen_teacher_app\library_alipay\src\main\AndroidManifest.xml

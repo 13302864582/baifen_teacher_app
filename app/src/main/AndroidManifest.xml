@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ucuxin.ucuxin.tec"
+   >
+    <!--android:versionCode="3032"-->
+    <!--android:versionName="2.5.2"-->
+    <!-- <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" /> -->
+   <!-- <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="22" />-->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <!--  <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
+    <uses-permission android:name="android.permission.READ_LOGS" />-->
+
+    <uses-feature android:name="android.hardware.camera" />
+
+
+
+
+
+    <application xmlns:tools="http://schemas.android.com/tools"
+        android:name="com.ucuxin.ucuxin.tec.TecApplication"
+        android:allowBackup="true"
+        android:allowClearUserData="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/AppThemeNew"
+        tools:replace="android:icon,android:theme,android:label"
+        >
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="546453d2fd98c5669f000a37" >
+        </meta-data>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENG_CHANNEL_VALUE}" />
+
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.SplashActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.MainActivity2"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.AuthActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.account.SubjectGradeChoiceActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.wxapi.WXEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="wx49cc3f8f84b2969f" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1104492609" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name="com.tencent.connect.avatar.ImageActivity" />
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.GradeChoiceActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--
+        <activity
+            android:name="ucuxinec.function.question.PayAnswerFragment"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        -->
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.question.PayAnswerGrabItemActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.question.PayAnswerAlbumActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.question.PayAnswerImageGridActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- <activity -->
+        <!-- android:name="ucuxinasstation.rewardfaq.PayAnswerCameraActivity" -->
+        <!-- android:screenOrientation="portrait" > -->
+        <!-- </activity> -->
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.question.PayAnswerPhotoViewActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.question.PayAnswerPhotoCropperViewActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.question.PayAnswerTextAnswerActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.question.YearQuestionActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.question.OneQuestionMoreAnswersDetailActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.question.PayAnswerQuestionDetailActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.communicate.ChatMsgViewActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.settings.TeacherInfoActivityNew"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.settings.StudentInfoActivityNew"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.partner.SingleEditTextActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.settings.TeacherCenterActivityNew"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--
+        <activity
+		    android:name="ucuxinec.group.ProvinceActivity"
+		    android:screenOrientation="portrait" >
+		</activity>
+		<activity
+		    android:name="ucuxinec.group.CityActivity"
+		    android:screenOrientation="portrait" >
+		</activity>
+        <activity
+            android:name="ucuxinec.gasstation.rewardfaq.QAHallActivity"
+            android:screenOrientation="portrait" >
+        </activity> 
+        <activity
+            android:name="ucuxinec.gasstation.rewardfaq.PayAnswerAskActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.gasstation.rewardfaq.PayAnswerQuestionPhotoViewActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+            <activity
+            android:name="com.ucuxin.ucuxin.tec.ChoicGreamActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        -->
+
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.question.PayAnswerAppendAskActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.question.MyQPadActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.settings.SystemSettingActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.partner.UserRequestActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.settings.AboutActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.communicate.AddContactsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.account.LogInActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.SearchSchoolActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" >
+        </activity>
+        <!--
+        <activity
+            android:name="com.ucuxin.goldnotless.PayActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+
+     <activity
+            android:name="com.ucuxin.ucuxin.tec.function.goldnotless.GoldNotLessActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.goldnotless.FriendGoldActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        -->
+
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.account.PhoneLoginActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|navigation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateVisible" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.account.PhoneRegisterActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" >
+        </activity>
+        <!--
+        <activity
+            android:name="com.ucuxin.goldnotless.PhoneCardPayAcvitity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" >
+        </activity>
+
+
+
+        -->
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.settings.DoNotDisturbActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.communicate.PreSendPicReViewActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.utils.DebugActvity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" >
+        </activity>
+
+        <service
+            android:name="com.ucuxin.ucuxin.tec.service.PushService"
+            android:enabled="true"
+            android:exported="false"
+            android:persistent="true" >
+        </service>
+
+        <receiver
+            android:name="com.ucuxin.ucuxin.tec.reveiver.NetworkReceiver"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="com.welearn.reveiver.startconn" />
+            </intent-filter>
+        </receiver>
+
+        <!--
+        <activity
+            android:name="ucuxinec.function.homework.HomeworkCheckFragment"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        -->
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.homework.teacher.TecHomeWorkDetail_OnlyReadActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.homework.TecHomeWorkCheckDetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.homework.teacher.TecHomeWorkCheckGrabItemActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.homework.teacher.TecHomeWorkSingleCheckActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.homework.student.StuHomeWorkCheckDetailActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.homework.student.StuHomeWorkHallActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.homework.student.StuHomeWorkSingleCheckActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.homework.SelectPicPopupWindow"
+            android:screenOrientation="portrait"
+            android:theme="@style/my_pop_activity_style" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.homework.CropImageActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.UploadActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.WebViewActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.homework.HomeWorkReadOnlyActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.homework.teacher.ChoiceKnowledgeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.question.FiterKnowledgeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.question.ChoiceListActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.weike.TecCourseActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.weike.AddCourseActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.teccourse.CourseCatalogActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.weike.SubjectChoiceActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.teccourse.KnowledgeQueryActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.teccourse.AddHandoutActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.weike.UpLoadClassActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.weike.PurchaseStudentActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.teccourse.SingleStudentQAActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.teccourse.CourseDetailActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.teccourse.CramSchoolDetailsActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.settings.StuModifiedInfoActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.partner.StudentAssessmentActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.account.CropPhotoActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.homework.KnowledgeSummaryActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.homework.HwReviewActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.homework.ShowHomeworkCheckActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.homework.MyCheckedHomeworkActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.homework.ResponderActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.communicate.MessageListActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.home.HasTousuActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.home.DaicainaActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.home.DaihuidaActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.home.NoticeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.home.MyWalletActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.home.MyRuzhangActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.home.MyTixianRecordActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.MyShareListActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 检测内存泄漏 start -->
+        <!--<service
+            android:name="com.squareup.leakcanary.internal.HeapAnalyzerService"
+            android:enabled="false"
+            android:process=":leakcanary" />
+        <service
+            android:name="com.squareup.leakcanary.DisplayLeakService"
+            android:enabled="false" />
+
+        <activity
+            android:name="com.squareup.leakcanary.internal.DisplayLeakActivity"
+            android:enabled="false"
+            android:icon="@drawable/__leak_canary_icon"
+            android:label="@string/__leak_canary_display_activity_label"
+            android:taskAffinity="com.squareup.leakcanary"
+            android:theme="@style/__LeakCanary.Base" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>-->
+        <!-- 检测内存泄漏end -->
+
+        <activity
+            android:name="com.ucuxin.ucuxin.tec.function.home.ZerenxinRuleActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.lantel.baifen.fileprovider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+
+</manifest>

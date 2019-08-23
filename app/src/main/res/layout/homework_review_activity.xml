@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".MainActivity">-->
+
+    <include
+        layout="@layout/welearn_header_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:id="@+id/tag_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="8dp"
+        android:paddingLeft="@dimen/common_margin"
+        android:paddingRight="@dimen/common_margin"
+        android:paddingTop="16.0dip"
+        android:text="请选择标签 （最多3个）"
+        android:textColor="@color/color_shenhui"
+        android:textSize="16.0sp"
+        android:visibility="visible" />
+
+    <!-- <ucuxinec.function.homework.view.tag.TagListView xmlns:f="http://schemas.android.com/apk/res-auto"
+         android:id="@+id/tagview"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:paddingBottom="@dimen/common_margin"
+         android:paddingLeft="@dimen/common_margin"
+         android:paddingRight="@dimen/common_margin"
+         android:paddingTop="16.0dip"
+         android:visibility="gone"
+         f:horizontalSpacing="@dimen/tag_horizontal_spacing"
+         f:orientation="horizontal"
+         f:verticalSpacing="@dimen/tag_vertical_spacing"
+
+         />-->
+
+
+    <com.ucuxin.ucuxin.tec.function.homework.view.tag.FlowTagLayout
+        android:id="@+id/tagview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="0dp"
+        android:paddingLeft="@dimen/common_margin"
+        android:paddingRight="@dimen/common_margin"
+        android:paddingTop="0dip"
+
+        />
+
+
+    <!--</android.support.design.widget.CoordinatorLayout>-->
+</LinearLayout>

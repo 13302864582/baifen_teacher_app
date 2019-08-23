@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/welearn_header_view" />
+
+    <RelativeLayout
+        android:id="@+id/english_btn_subjectchoice"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="23dip"
+        android:background="@drawable/bg_grade_subject_selector"
+        android:clickable="true"
+        android:tag="1" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="36dip"
+            android:gravity="center"
+            android:text="@string/text_subject_english"
+            android:textColor="#242424"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/english_iv_subjectchoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="36dip"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_choice"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ececec" />
+
+    <RelativeLayout
+        android:id="@+id/math_btn_subjectchoice"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="@drawable/bg_grade_subject_selector"
+        android:clickable="true"
+        android:tag="2" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="36dip"
+            android:gravity="center"
+            android:text="@string/text_subject_math"
+            android:textColor="#242424"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/math_iv_subjectchoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="36dip"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_choice"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/line_math"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ececec" />
+
+    <RelativeLayout
+        android:id="@+id/physical_btn_subjectchoice"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="@drawable/bg_grade_subject_selector"
+        android:clickable="true"
+        android:tag="3" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="36dip"
+            android:gravity="center"
+            android:text="@string/text_subject_physical"
+            android:textColor="#242424"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/physical_iv_subjectchoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="36dip"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_choice"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/line_physical"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ececec" />
+
+    <RelativeLayout
+        android:id="@+id/chemistry_btn_subjectchoice"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="@drawable/bg_grade_subject_selector"
+        android:clickable="true"
+        android:tag="4" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="36dip"
+            android:gravity="center"
+            android:text="@string/text_subject_chemistry"
+            android:textColor="#242424"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/chemistry_iv_subjectchoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="36dip"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_choice"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/line_chemistry"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ececec" />
+
+    <RelativeLayout
+        android:id="@+id/biology_btn_subjectchoice"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="@drawable/bg_grade_subject_selector"
+        android:clickable="true"
+        android:tag="5" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="36dip"
+            android:gravity="center"
+            android:text="@string/text_subject_biology"
+            android:textColor="#242424"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/biology_iv_subjectchoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="36dip"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_choice"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ececec" />
+
+    <!-- 添加语文start -->
+
+    <RelativeLayout
+        android:id="@+id/chinese_btn_subjectchoice"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="@drawable/bg_grade_subject_selector"
+        android:clickable="true"
+        android:tag="6" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="36dip"
+            android:gravity="center"
+            android:text="@string/text_subject_chinese"
+            android:textColor="#242424"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/chinese_iv_subjectchoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="36dip"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_choice"
+            android:visibility="gone" />
+    </RelativeLayout>
+    <!-- 添加语文end -->
+
+</LinearLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <include  android:layout_width="fill_parent"
+        android:layout_height="wrap_content" layout="@layout/welearn_header_view" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_weight="111" >
+
+            <EditText
+                android:id="@+id/add_contacts_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/bg_edittext"
+                android:drawableLeft="@drawable/ic_search"
+                android:drawablePadding="5dp"
+                android:hint="@string/text_search_hint"
+                android:imeOptions="actionSearch"
+                android:maxLength="15"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/add_contacts_delete_iv"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginRight="13dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/bt_delete"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/add_contacts_search_bt"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bg_normal_btn_selector"
+            android:gravity="center"
+            android:text="@string/text_search_btn"
+            android:textColor="@color/bg_normal_btn_text_color_selector"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/search_user_line_tv"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_marginLeft="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginTop="10dp"
+        android:background="#c7c8cc" />
+
+    <ListView
+        android:id="@+id/search_user_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff" >
+    </ListView>
+
+</LinearLayout>

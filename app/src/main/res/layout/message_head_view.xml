@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/header"
+        android:elevation="4dp"
+        android:layout_width="fill_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#e5ffffff" >
+
+        <RelativeLayout
+            android:id="@+id/rl_container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <RelativeLayout
+                android:layout_alignParentBottom="true"
+                android:id="@+id/back_layout"
+                android:layout_width="@dimen/welearn_title_bar_hight"
+                android:layout_height="@dimen/welearn_title_bar_hight"
+                android:background="@drawable/welearn_bg_title_bar_icon"
+                android:visibility="visible" >
+
+                <ImageView
+                    android:id="@+id/back_iv"
+                    android:layout_width="53dp"
+                    android:layout_height="38dp"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/app_name"
+                    android:duplicateParentState="true"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:src="@mipmap/icon_back"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/tips_first_use"
+                    android:layout_width="7dp"
+                    android:layout_height="7dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="7dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_unread_redpoint"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/back_tv"
+                    style="@style/welearn_Titlebar_Second_Text_Style"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/bg_next_step_btn_selector"
+                    android:clickable="false"
+                    android:ellipsize="none"
+                    android:gravity="center"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:singleLine="true"
+                    android:text="上一步"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_alignParentBottom="true"
+                android:id="@+id/title_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/welearn_title_bar_hight"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/welearn_title_bar_back_padding_left"
+                android:duplicateParentState="true"
+                android:gravity="center" >
+
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="visible" >
+
+                    <RadioButton
+                        android:id="@+id/radio_message"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/xian_baline"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:text="@string/tab_radio_message"
+                        android:textColor="@color/welearn_theme_center_txt_color"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/radio_friend"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:background="@android:color/transparent"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:text="@string/tab_radio_xueban"
+                        android:textColor="#737373"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </RadioGroup>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_alignParentBottom="true"
+                android:id="@+id/next_setp_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/welearn_title_bar_hight"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/welearn_bg_title_bar_icon"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/next_step_btn"
+                    style="@style/welearn_Titlebar_Second_Text_Style"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/bg_next_step_btn_selector"
+                    android:clickable="false"
+                    android:ellipsize="none"
+                    android:gravity="center"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="@dimen/welearn_title_bar_back_padding_left"
+                    android:paddingRight="6dp"
+                    android:paddingTop="5dp"
+                    android:singleLine="true"
+                    android:text="下一步"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/next_step_img"
+                    style="@style/welearn_Titlebar_Icon_Style"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/next_step_btn"
+                    android:clickable="false"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/bg_actionbar_addcontact_selector"
+                    android:visibility="visible" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+</LinearLayout>

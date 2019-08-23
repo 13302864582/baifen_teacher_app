@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- 	<dimen name="MyRatingBarWid">135dip</dimen> -->
+<!-- 	<dimen name="MyRatingBarHei">18dip</dimen> -->
+	<dimen name="MyRatingBarStartWid">27dip</dimen>
+	<dimen name="MyRatingBarStartHei">16dip</dimen>
+	
+	<dimen name="adoptHomeWorkRatingBarStartWid">30dip</dimen>
+	<dimen name="adoptHomeWorkRatingBarStartHei">22dip</dimen>
+	
+	    
+    <dimen name="adopt_dialog_width">300dp</dimen>
+    <dimen name="adopt_dialog_height">270dp</dimen>
+    
+    <dimen name="adopt_edit_width">260dp</dimen>
+    <dimen name="adopt_edit_height">42dp</dimen>
+    
+    <dimen name="adopt_submit_width">125dp</dimen>
+    <dimen name="adopt_submit_height">37dp</dimen>
+</resources>

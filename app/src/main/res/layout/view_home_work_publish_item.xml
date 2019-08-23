@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp" >
+
+    <RelativeLayout
+        android:layout_width="@dimen/stu_publish_homework_image_size"
+        android:layout_height="@dimen/stu_publish_homework_image_size"
+        android:layout_centerInParent="true"
+        android:gravity="center_vertical" >
+
+        <ImageView
+            android:id="@+id/home_work_image_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_margin="5dp"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/home_work_delete_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/app_name"
+            android:minHeight="20dp"
+            android:minWidth="20dp"
+            android:src="@drawable/ic_camera_choice_del_selector" />
+    </RelativeLayout>
+
+</RelativeLayout>

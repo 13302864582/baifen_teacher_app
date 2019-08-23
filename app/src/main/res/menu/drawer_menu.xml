@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/group1">
+        <item
+            android:id="@+id/nav_homework"
+            android:icon="@mipmap/drawer_homework"
+            android:title="@string/drawer_homework"/>
+    </group>
+    <group android:id="@+id/group2">
+        <item
+            android:id="@+id/nav_question"
+            android:icon="@mipmap/drawer_question"
+            android:title="@string/drawer_question"/>
+    </group>
+    <group android:id="@+id/group3">
+        <item
+            android:id="@+id/nav_login_out"
+            android:icon="@mipmap/drawer_exit"
+            android:title="@string/login_out"/>
+    </group>
+</menu>

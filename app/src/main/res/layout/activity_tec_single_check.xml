@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#828282" >
+
+    <include
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/welearn_header_view" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header_layout" >
+
+        <FrameLayout
+            android:id="@+id/headr_container_tec_single"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:minHeight="23dp" >
+
+            <LinearLayout
+                android:id="@+id/choice_container_tec_single"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <LinearLayout
+                    android:id="@+id/wrongtype_choice_btn_tec_single"
+                    android:layout_width="95dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/refuse_homework_btn_selector"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/wrongtype_choice_tv_tec_single"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="错题类型" />
+
+                    <ImageView
+                        android:id="@+id/wrongtype_choice_iv_tec_single"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/choice_wrong_type_btn_icon_" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/knowledge_choice_btn_tec_single"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="40dp"
+                    android:background="@drawable/refuse_homework_btn_selector"
+                    android:gravity="center"
+                    android:visibility="invisible" >
+
+                    <TextView
+                        android:id="@+id/knowledge_choice_tv_tec_single"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="所属知识点" />
+
+                    <ImageView
+                        android:id="@+id/knowledge_choice_iv_tec_single"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/choice_wrong_type_btn_icon_" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/tips_tec_single"
+            android:layout_below="@id/headr_container_tec_single"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:gravity="center"
+            android:minHeight="300dp" >
+
+            <com.ucuxin.ucuxin.tec.function.homework.view.AddPointCommonView
+                android:id="@+id/add_point_common_tec_single"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="1dp"
+                />
+            <TextView 
+                android:id="@+id/tv_has_tousu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="有投诉"
+                android:textSize="14sp"
+                android:textColor="@android:color/holo_red_light"
+                android:background="@drawable/has_fankui_bg"
+                android:gravity="center"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tips_tec_single"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="@string/add_handout_view_text"
+            android:textColor="@color/TextColorRed"
+            android:textSize="14sp"
+            />
+
+        <RelativeLayout
+            android:id="@+id/op_layout"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/white"
+            android:minHeight="55dp"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="37dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_point_view_text1"
+                    android:textColor="@color/TextColorBlack"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/check_point_view_text2"
+                    android:textColor="@color/TextColorBlack"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/info_turn_ibtn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/help_btn_tec_single_selector" />
+
+            <LinearLayout
+                android:id="@+id/answer_choice_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <Button
+                    android:id="@+id/text_choice_ibtn"
+                    android:layout_width="108dp"
+                    android:layout_height="34dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/text_btn_tec_single_selector"
+                    android:paddingLeft="18dp"
+                    android:text="文字注释" />
+
+                <Button
+                    android:id="@+id/voice_choice_ibtn"
+                    android:layout_width="108dp"
+                    android:layout_height="34dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/speech_btn_tec_single_selector"
+                    android:paddingLeft="18dp"
+                    android:text="语音注释" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/text_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/white"
+                android:padding="5dp"
+                android:visibility="gone" >
+
+                <Button
+                    android:id="@+id/input_sure_btn"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginRight="5dip"
+                    android:background="@drawable/bg_normal_btn_selector"
+                    android:gravity="center"
+                    android:tag="0"
+                    android:text="@string/text_nav_cancel"
+                    android:textColor="@color/bg_normal_btn_text_color_selector" />
+
+                <EditText
+                    android:id="@+id/text_input_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/input_sure_btn"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="bottom"
+                    android:inputType="text"
+                    android:padding="6dp"
+                    android:singleLine="false" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/info_container_right"
+            android:layout_width="match_parent"
+            android:layout_height="115dp"
+            android:layout_above="@+id/op_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="-5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/help_info_bg_tecsingle"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/help_info_text1"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/help_info_text2"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/help_info_text3"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/info_container_wrong"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_above="@+id/op_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="-5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/help_info_bg_wrong"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="6dp"
+                android:text="@string/help_info_text_wrong1"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/help_info_text_wrong2"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <com.ucuxin.ucuxin.tec.function.teccourse.view.InputExplainView
+        android:id="@+id/input_container_tec_single"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</RelativeLayout>

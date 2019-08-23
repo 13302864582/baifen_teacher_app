@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/welearn_header_view" android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/user_request_text"
+                android:layout_width="match_parent"
+                android:layout_height="200dip"
+                android:layout_marginTop="15dip"
+                android:layout_weight="0.21"
+                android:background="#f2f2f2"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="top"
+                android:hint="@string/content_too_short"
+                android:inputType="textMultiLine"
+                android:maxLength="200" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

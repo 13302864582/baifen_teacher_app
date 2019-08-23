@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/welearn_header_view" />
+
+      <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/tab_height"
+        android:layout_below="@+id/top"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <RadioButton
+            android:id="@+id/radio_homework"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bline"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="对我的投诉"
+            android:textColor="@color/tab_color"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/radio_question"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="我的仲裁"
+            android:textColor="@color/tab_normal"
+            android:textSize="14sp" />
+    </RadioGroup>
+<RelativeLayout
+    android:id="@+id/rl_tishi"
+    android:layout_below="@+id/radio_group"
+    android:layout_width="match_parent"
+    android:background="#E5E5E5"
+
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_marginRight="45dp"
+        android:id="@+id/tv_tishi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="4dp"
+        android:textSize="14sp"
+        android:textColor="#8D8D8D"
+        android:layout_marginBottom="2dp"
+        />
+<ImageView
+    android:id="@+id/iv_tishi"
+    android:layout_alignParentRight="true"
+    android:layout_alignBottom="@+id/tv_tishi"
+    android:layout_width="25dp"
+    android:layout_height="25dp"
+    android:padding="5dp"
+    android:src="@drawable/guanbi"/>
+</RelativeLayout>
+    <com.ucuxin.ucuxin.tec.view.xlistview.XListView
+        android:id="@+id/answer_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+      android:layout_below="@+id/rl_tishi"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@color/answer_list_diver"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="none" />
+
+    <LinearLayout
+        android:id="@+id/ll_kongbai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp"
+        android:orientation="vertical"
+        android:visibility="gone" >
+        
+         <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/meifawenti" />  
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="没有被投诉的作业"
+            android:textColor="#828282" />
+
+            
+    </LinearLayout>
+
+</RelativeLayout>

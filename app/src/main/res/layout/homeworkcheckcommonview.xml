@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="216dip"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="9dp"
+        android:background="@null"
+        android:orientation="vertical"
+        android:visibility="gone" />
+
+
+    <TextView
+        android:id="@+id/credit_tv_check_common"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:text="@string/homework_check_common_credit_text"
+        android:textColor="#302f2f"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="36dp"
+        android:background="@mipmap/bg_grab_img">
+
+        <RelativeLayout
+            android:id="@+id/zuote_container"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_margin="@dimen/margin_16"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_vip_info"
+                android:layout_width="75dp"
+                android:layout_height="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginBottom="@dimen/margin_8"
+                android:background="@drawable/vip_bg"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="10sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/top"
+                android:layout_below="@id/tv_vip_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_16">
+
+                <TextView
+                    android:id="@+id/ask_time_tv_check_common"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="#3F3F3F"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/asker_grade_tv_check_common"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:textColor="#3F3F3F"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/asker_subject_tv_check_common"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:textColor="#3F3F3F"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <GridView
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_16"
+                android:id="@+id/homework_img_container_gridview_common"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/top"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="4dp"
+                android:listSelector="@color/transparent"
+                android:numColumns="2"
+                android:scrollbars="none"
+                android:scrollingCache="false"
+                android:splitMotionEvents="false"
+                android:verticalSpacing="2dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/no_question_iv_check_common"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_margin="3dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_no_homework"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/info_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/zuote_container"
+            app:layout_constraintRight_toRightOf="@id/zuote_container"
+            app:layout_constraintTop_toBottomOf="@id/zuote_container">
+
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/avatar_iv_check_common"
+                android:layout_width="@dimen/avatar_size_homeworkhall_item_common"
+                android:layout_height="@dimen/avatar_size_homeworkhall_item_common"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:adjustViewBounds="true"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/teacher_default_avatar_yuanjiao"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/reward_val_tv_check_common"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margin_16"
+                android:text=""
+                android:textColor="#FF7113"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/reward_text_tv_check_common"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="酬金： "
+                android:textColor="#FF7113"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/reward_val_tv_check_common"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="57dip"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_marginRight="@dimen/margin_8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/avatar_iv_check_common"
+                app:layout_constraintRight_toLeftOf="@id/reward_text_tv_check_common"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/nick_tv_check_common"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="10dip"
+                    android:ellipsize="end"
+                    android:maxWidth="110dp"
+                    android:singleLine="true"
+                    android:textColor="#302f2f"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_xuehao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/nick_tv_check_common"
+                    android:layout_alignLeft="@id/nick_tv_check_common"
+                    android:layout_marginTop="5dp"
+                    android:singleLine="true"
+                    android:textColor="#808080"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/desc_tv_check_common"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="55dip"
+        android:layout_marginTop="-12dp"
+        android:layout_marginRight="55dip"
+        android:background="@drawable/memo_bg"
+        android:gravity="center_vertical"
+        android:paddingLeft="11dp"
+        android:paddingRight="11dp"
+        android:textColor="#313131"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/zuote_container" />
+
+   <!-- <TextView
+        android:id="@+id/tv_extra_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:gravity="right"
+        android:text=""
+        android:textColor="#ff7200" />-->
+
+</LinearLayout>

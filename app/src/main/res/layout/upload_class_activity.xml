@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/welearn_header_view" />
+
+    <EditText
+        android:id="@+id/classname_et_uploadclass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/editclass_inputframe"
+        android:gravity="center_vertical"
+        android:hint="@string/upload_course_hint_text1"
+        android:maxLength="20"
+        android:paddingLeft="10dp"
+        android:singleLine="true"
+        android:textColor="#6f6f6f"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/knowledge_tv_uploadclass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/editclass_inputframe"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="@string/upload_course_hint_text2"
+        android:textColor="#6f6f6f"
+        android:textSize="13sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="43dp"
+        android:background="#c3ccd6" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="19dp"
+        android:text="@string/upload_course_text"
+        android:textColor="#000000"
+        android:textSize="15sp" />
+
+    <com.ucuxin.ucuxin.tec.view.gridview.MyGridView
+        android:id="@+id/page_gridview_uploadclass"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="11dp"
+        android:listSelector="@color/transparent"
+        android:numColumns="4"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:scrollbars="none"
+        android:scrollingCache="false"
+        android:splitMotionEvents="false" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="11" />
+
+    <Button
+        android:id="@+id/delete_class_btn_uploadclass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="26dp"
+        android:background="@drawable/upload_class_btn_selector"
+        android:gravity="center"
+        android:text="@string/delete_this_class_text"
+        android:textColor="@color/white"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/tips_container_uploadclass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="19dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/upload_course_tips_text1"
+            android:textColor="#ff2a2a"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/upload_course_tips_text2"
+            android:textColor="#808080"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/upload_course_tips_text3"
+            android:textColor="#808080"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>
