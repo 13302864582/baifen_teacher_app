@@ -69,4 +69,5 @@
     <dimen name="tv_teacher_name">14sp</dimen>
     <dimen name="tv_xuehao">10sp</dimen>
     <dimen name="tv_getguize">8sp</dimen>
+    <dimen name="radius_btn">5dp</dimen>
 </resources>
