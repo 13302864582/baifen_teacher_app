@@ -12,8 +12,8 @@ import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ListView;
 
 import com.google.gson.Gson;
-import com.umeng.analytics.MobclickAgent;
 import com.ucuxin.ucuxin.tec.MainActivity;
+import com.umeng.analytics.MobclickAgent;
 import com.ucuxin.ucuxin.tec.R;
 import com.ucuxin.ucuxin.tec.api.WeLearnApi;
 import com.ucuxin.ucuxin.tec.constant.MsgConstant;
@@ -72,13 +72,13 @@ public class CommunicateFragment extends Fragment implements OnItemClickListener
 
 			@Override
 			public void postTask() {
-				if (MainActivity.unReadMsgPointIv != null) {
-					if (MainActivity.isShowPoint) {
-						MainActivity.unReadMsgPointIv.setVisibility(View.VISIBLE);
+				/*if (MainActivity2.unReadMsgPointIv != null) {
+					if (MainActivity2.isShowPoint) {
+						MainActivity2.unReadMsgPointIv.setVisibility(View.VISIBLE);
 					} else {
-						MainActivity.unReadMsgPointIv.setVisibility(View.INVISIBLE);
+						MainActivity2.unReadMsgPointIv.setVisibility(View.INVISIBLE);
 					}
-				}
+				}*/
 				if (infos != null && infos.size() > 0) {
 					for (int i = 0; i < infos.size(); i++) {
 						final ChatInfo chat = infos.get(i);

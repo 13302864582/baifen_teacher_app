@@ -27,6 +27,7 @@ import android.widget.Button;
 import com.ucuxin.ucuxin.tec.R;
 import com.ucuxin.ucuxin.tec.constant.GlobalContant;
 import com.ucuxin.ucuxin.tec.function.question.PayAnswerImageGridActivity;
+import com.ucuxin.ucuxin.tec.utils.AppUtils;
 import com.ucuxin.ucuxin.tec.utils.MyFileUtil;
 import com.ucuxin.ucuxin.tec.utils.SharePerfenceUtil;
 import com.ucuxin.ucuxin.tec.utils.ToastUtils;
@@ -76,22 +77,7 @@ public class SelectPicPopupWindow extends Activity implements OnClickListener {
         return true;
     }
 
-    /**
-     * 将文件转换成uri(支持7.0)
-     *
-     * @param mContext
-     * @param file
-     * @return
-     */
-    public static Uri getUriForFile(Context mContext, File file) {
-        Uri fileUri = null;
-        if (Build.VERSION.SDK_INT >= 24) {
-            fileUri = FileProvider.getUriForFile(mContext, "com.lantel.baifen.fileprovider", file);
-        } else {
-            fileUri = Uri.fromFile(file);
-        }
-        return fileUri;
-    }
+
 
     public void onClick(View v) {
         switch (v.getId()) {
@@ -103,7 +89,7 @@ public class SelectPicPopupWindow extends Activity implements OnClickListener {
                             + System.currentTimeMillis() + ".png";
                     SharePerfenceUtil.getInstance().putString("out_file_path", out_file_path);
                     File mPhotoFile=new File(out_file_path);
-                    getImageByCamera.putExtra(MediaStore.EXTRA_OUTPUT, /*Uri.fromFile(mPhotoFile)*/getUriForFile(this,mPhotoFile));
+                    getImageByCamera.putExtra(MediaStore.EXTRA_OUTPUT, /*Uri.fromFile(mPhotoFile)*/AppUtils.getUriForFile(this,mPhotoFile));
                     // getImageByCamera.putExtra(MediaStore.EXTRA_VIDEO_QUALITY,
                     // 1);
                     // ContentValues values = new ContentValues();

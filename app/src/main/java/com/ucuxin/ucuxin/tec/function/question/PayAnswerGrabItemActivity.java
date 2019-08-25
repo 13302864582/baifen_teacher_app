@@ -40,6 +40,7 @@ import com.ucuxin.ucuxin.tec.manager.IntentManager;
 import com.ucuxin.ucuxin.tec.model.ExplainPoint;
 import com.ucuxin.ucuxin.tec.model.QuestionModelGson;
 import com.ucuxin.ucuxin.tec.okhttp.callback.StringCallback;
+import com.ucuxin.ucuxin.tec.utils.AppUtils;
 import com.ucuxin.ucuxin.tec.utils.DisplayUtils;
 import com.ucuxin.ucuxin.tec.utils.JsonUtils;
 import com.ucuxin.ucuxin.tec.utils.LOG;
@@ -787,8 +788,7 @@ public class PayAnswerGrabItemActivity extends BaseActivity implements OnClickLi
 		if (requestCode == GlobalContant.REQUEST_CODE_GET_IMAGE_FROM_CROP) {
 			if (resultCode == RESULT_OK) {
 				String savePath = data.getStringExtra(PayAnswerImageGridActivity.IMAGE_PATH);
-
-				Intent localIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(new File(savePath)));
+				Intent localIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,AppUtils.getUriForFile(this,new File(savePath)));
 				sendBroadcast(localIntent);
 
 				Bundle bundle = new Bundle();
@@ -811,8 +811,7 @@ public class PayAnswerGrabItemActivity extends BaseActivity implements OnClickLi
 
 
 			String path = MyFileUtil.getAnswerFile().getAbsolutePath() + File.separator + "publish.png";
-
-			Intent localIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(new File(path)));
+			Intent localIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, AppUtils.getUriForFile(this,new File(path)));
 			sendBroadcast(localIntent);
 
 			localIntent.setClass(this, CropImageActivity.class);

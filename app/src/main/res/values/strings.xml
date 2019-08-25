@@ -625,4 +625,6 @@
     <string name="ying">英语</string>
     <string name="str_xuehaoname" >学号:  %1$s</string>
     <string name="str_zongxuedian" >总学点:  %1$s点</string>
-    <string name="str_xinyu" >信用:  %1$s</string></resources>
+    <string name="str_xinyu" >信用:  %1$s</string>
+    <string name="los_psw">忘记密码?</string>
+</resources>

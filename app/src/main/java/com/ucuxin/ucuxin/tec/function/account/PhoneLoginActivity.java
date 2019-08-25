@@ -24,6 +24,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -65,7 +66,7 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener,
 
     private String address;
 
-    private LinearLayout bottom_info_layout;
+    private RelativeLayout bottom_info_layout;
 
     private Button debug_bt;
 
@@ -110,11 +111,12 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener,
         psw_et = (EditText) findViewById(R.id.phone_psw_et_phonelogin);
         login_btn = (Button) findViewById(R.id.phone_login_btn_phonelogin);
         nonNum = (TextView) findViewById(R.id.non_num_tv_phonelogin);
-        bottom_info_layout = (LinearLayout) findViewById(R.id.bottom_info_layout);
+        bottom_info_layout = (RelativeLayout) findViewById(R.id.bottom_info_layout);
 
         TextView losPsw = (TextView) findViewById(R.id.los_psw_tv_phonelogin);
+        losPsw.setOnClickListener(this);
+       /*
         SpannableString spStr = new SpannableString("忘记密码了？");
-
         spStr.setSpan(new ClickableSpan() {
             @Override
             public void updateDrawState(TextPaint ds) {
@@ -128,7 +130,7 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener,
                 i.putExtra(PhoneRegisterActivity.DO_TAG, PhoneRegisterActivity.DO_RESET);
                 startActivity(i);
             }
-        }, 0, "忘记密码了？".length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }, 0, "忘记密码了？".length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);*/
 
         tv_wangzhi = (TextView) findViewById(R.id.tv_wangzhi);
         address = TecApplication.getContext().getResources().getString(R.string.login_guide_info_address);
@@ -140,8 +142,8 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener,
         tv_wangzhi.setText("网址:" + builder);
 
         //losPsw.setHighlightColor(Color.TRANSPARENT); // 设置点击后的颜色为透明，否则会一直出现高亮
-        losPsw.append(spStr);
-        losPsw.setMovementMethod(LinkMovementMethod.getInstance());// 开始响应点击事件
+        //losPsw.append(spStr);
+        //losPsw.setMovementMethod(LinkMovementMethod.getInstance());// 开始响应点击事件
 
         debug_bt = (Button) this.findViewById(R.id.ip_change_debug_bt);
 
@@ -280,6 +282,11 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener,
 //                break;
             case R.id.ip_change_debug_bt:// 换ip
                 startActivity(new Intent(this, DebugActvity.class));
+                break;
+            case R.id.los_psw_tv_phonelogin:
+                Intent i = new Intent(PhoneLoginActivity.this, PhoneRegisterActivity.class);
+                i.putExtra(PhoneRegisterActivity.DO_TAG, PhoneRegisterActivity.DO_RESET);
+                startActivity(i);
                 break;
         }
     }

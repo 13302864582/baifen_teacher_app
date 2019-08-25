@@ -108,13 +108,13 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp" />
 
-            <Button
+            <TextView
                 android:id="@+id/dialog_cancel_btn"
                 style="@style/dialog_btn"
                 android:layout_toLeftOf="@+id/center_view"
                 android:text="@string/text_nav_cancel" />
 
-            <Button
+            <TextView
                 android:id="@+id/dialog_ok_btn"
                 style="@style/dialog_btn"
                 android:layout_toRightOf="@+id/center_view"

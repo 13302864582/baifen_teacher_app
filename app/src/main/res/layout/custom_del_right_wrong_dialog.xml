@@ -55,20 +55,20 @@
                 android:layout_width="110dp"
                 android:layout_height="37dp"
                 android:layout_marginRight="20.0dip"
-                android:background="@drawable/jiucuo_btn_selector"
                 android:gravity="center"
                 android:text="取消"
-                android:textColor="#484848"
+                android:background="@drawable/btn_solid_radius"
+                android:textColor="@color/welearn_theme_center_txt_color"
                 android:textSize="18sp" />
 
             <Button
                 android:id="@+id/btn_ok"
                 android:layout_width="110dp"
                 android:layout_height="37dp"
-                android:background="@drawable/jiucuo_btn_selector"
+                android:background="@drawable/btn_solid_radius"
+                android:textColor="@color/welearn_theme_center_txt_color"
                 android:gravity="center"
                 android:text="采纳"
-                android:textColor="#484848"
                 android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>

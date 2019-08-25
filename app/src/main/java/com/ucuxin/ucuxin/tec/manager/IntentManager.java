@@ -2,9 +2,9 @@ package com.ucuxin.ucuxin.tec.manager;
 
 import java.io.File;
 
-import com.ucuxin.ucuxin.tec.MainActivity2;
-import com.umeng.analytics.MobclickAgent;
 import com.ucuxin.ucuxin.tec.MainActivity;
+import com.ucuxin.ucuxin.tec.utils.AppUtils;
+import com.umeng.analytics.MobclickAgent;
 import com.ucuxin.ucuxin.tec.R;
 import com.ucuxin.ucuxin.tec.base.BaseIntentManager;
 import com.ucuxin.ucuxin.tec.constant.GlobalContant;
@@ -118,7 +118,7 @@ public class IntentManager extends BaseIntentManager {
 	}
 
 	public static void goToMainView(Activity context) {
-		openActivity(context, MainActivity2.class, true);
+		openActivity(context, MainActivity.class, true);
 	}
 
 	public static void goToLogInView(Context context) {
@@ -668,7 +668,8 @@ public class IntentManager extends BaseIntentManager {
 		default:
 			break;
 		}
-		Uri fileUri = Uri.fromFile(file);
+
+		Uri fileUri = AppUtils.getUriForFile(context,file);
 		intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
 
 		try {

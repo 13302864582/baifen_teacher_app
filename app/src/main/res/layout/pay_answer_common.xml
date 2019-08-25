@@ -160,8 +160,8 @@
                     android:layout_marginLeft="@dimen/margin_8"
                     android:layout_marginRight="@dimen/margin_8"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/avatar_iv_check_common"
-                    app:layout_constraintRight_toLeftOf="@id/reward_text_tv_check_common"
+                    app:layout_constraintLeft_toRightOf="@id/pay_answer_user_avatar"
+                    app:layout_constraintRight_toLeftOf="@id/pay_answer_reward"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
@@ -177,11 +177,11 @@
                         android:textSize="15sp" />
 
                     <TextView
+                        android:layout_marginLeft="10dip"
                         android:id="@+id/tv_xuehao"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/nick_tv_check_common"
-                        android:layout_alignLeft="@id/nick_tv_check_common"
+                        android:layout_below="@id/pay_answer_nick"
                         android:layout_marginTop="5dp"
                         android:singleLine="true"
                         android:textColor="#808080"

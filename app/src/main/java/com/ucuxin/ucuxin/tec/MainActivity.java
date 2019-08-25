@@ -18,37 +18,35 @@ import android.text.TextUtils;
 import android.text.format.DateUtils;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-
 import com.alibaba.fastjson.JSON;
 import com.android.volley.Request.Method;
 import com.android.volley.Response.Listener;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.bumptech.glide.Glide;
+import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
-import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
-import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
-import com.umeng.analytics.MobclickAgent;
 import com.ucuxin.ucuxin.tec.api.HomeApI;
 import com.ucuxin.ucuxin.tec.api.WeLearnApi;
 import com.ucuxin.ucuxin.tec.base.BaseActivity;
 import com.ucuxin.ucuxin.tec.config.AppConfig;
+import com.ucuxin.ucuxin.tec.constant.GlobalContant;
 import com.ucuxin.ucuxin.tec.constant.GlobalVariable;
 import com.ucuxin.ucuxin.tec.constant.MsgConstant;
 import com.ucuxin.ucuxin.tec.constant.RequestConstant;
 import com.ucuxin.ucuxin.tec.controller.MainMessageController;
 import com.ucuxin.ucuxin.tec.db.WLDBHelper;
-import com.ucuxin.ucuxin.tec.function.communicate.AddContactsActivity;
 import com.ucuxin.ucuxin.tec.function.communicate.MessageListActivity;
 import com.ucuxin.ucuxin.tec.function.home.DaicainaActivity;
 import com.ucuxin.ucuxin.tec.function.home.DaihuidaActivity;
@@ -59,7 +57,7 @@ import com.ucuxin.ucuxin.tec.function.home.ZerenxinRuleActivity;
 import com.ucuxin.ucuxin.tec.function.home.model.HomepageModel;
 import com.ucuxin.ucuxin.tec.function.home.model.NoticeModel;
 import com.ucuxin.ucuxin.tec.function.homework.ResponderActivity;
-import com.ucuxin.ucuxin.tec.function.settings.TeacherCenterActivityNew;
+import com.ucuxin.ucuxin.tec.function.homework.student.StuHomeWorkHallActivity;
 import com.ucuxin.ucuxin.tec.http.OkHttpHelper;
 import com.ucuxin.ucuxin.tec.http.OkHttpHelper.HttpListener;
 import com.ucuxin.ucuxin.tec.http.VolleyRequestQueue;
@@ -69,6 +67,7 @@ import com.ucuxin.ucuxin.tec.manager.IntentManager;
 import com.ucuxin.ucuxin.tec.model.ChatInfo;
 import com.ucuxin.ucuxin.tec.model.UserInfoModel;
 import com.ucuxin.ucuxin.tec.okhttp.callback.StringCallback;
+import com.ucuxin.ucuxin.tec.utils.GoldToStringUtil;
 import com.ucuxin.ucuxin.tec.utils.JsonUtils;
 import com.ucuxin.ucuxin.tec.utils.LogUtils;
 import com.ucuxin.ucuxin.tec.utils.MyAsyncTask;
@@ -79,10 +78,9 @@ import com.ucuxin.ucuxin.tec.utils.ToastUtils;
 import com.ucuxin.ucuxin.tec.utils.glide.GlideImageUtils;
 import com.ucuxin.ucuxin.tec.view.dialog.CustomAppCheckUpdateDialog;
 import com.ucuxin.ucuxin.tec.view.dialog.CustomTixianDialog;
-
+import com.umeng.analytics.MobclickAgent;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -97,68 +95,53 @@ import java.util.List;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
-
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import de.hdodenhof.circleimageview.CircleImageView;
 import okhttp3.Call;
 import okhttp3.Request;
-
 
 /**
  * 主页
  *
  * @author: sky
  */
-public class MainActivity extends BaseActivity
-        implements OnClickListener, INetWorkListener, OnRefreshListener<ScrollView> {
-
+public class MainActivity extends BaseActivity implements HttpListener,OnClickListener, INetWorkListener, OnRefreshListener<ScrollView>, NavigationView.OnNavigationItemSelectedListener {
     public static final String TAG = MainActivity.class.getSimpleName();
-
-    //private UpdateManagerForDialog mUpdateManager;
-    public static int unReadMsgCount;
     public static boolean isShowPoint;
     // 按两次退出标志
     private boolean isWaittingExit;
     private static long checkTime;
-    private RelativeLayout backLayout;
-    private ImageView firstUseTipIV;
-    public static View unReadMsgPointIv;
-
     private UserInfoModel userInfo;
-
-    private RelativeLayout layout_tousu, layout_zhuiwen, layout_caina, layout_news_message, layout_gotixian;
-    private LinearLayout layout_gonggao;
-    private ImageView iv_teacher_avatar, iv_setting, iv_qiang, iv_shuaxinjinbi;
-    private TextView tv_teacher_name, tv_xuehao, tv_xinyong, tv_total_xuedian_val, tv_ketixian_val, tv_gotixian,
-            tv_gonggao;
+    private ConstraintLayout layout_tousu, layout_zhuiwen, layout_caina, layout_news_message;
+    private ConstraintLayout layout_gonggao;
+    private ImageView iv_teacher_avatar, iv_qiang;
+    private TextView tv_teacher_name, tv_xuehao, tv_xinyong, tv_total_xuedian_val, tv_ketixian_val, tv_gotixian, tv_gonggao;
     private TextView tv_youtousu, tv_youzhuiwen, tv_youcaina, tv_hasxiaoxi, tv_version;
-
-
-    private PullToRefreshScrollView mPullRefreshScrollView;
-    private ScrollView mScrollView;
-    private RelativeLayout layout_zerenxin;
+    //private PullToRefreshScrollView mPullRefreshScrollView;
+    //private ScrollView mScrollView;
+    private TextView tv_head_rule;
     private LinearLayout layout_zerenxin_star;
-
-    private static long reflashTime;
     private List<ChatInfo> infos;
     private int currentIndex;
     private static boolean isDoInDB;
     private MainMessageController mainMessageController;
-
     private HomeApI homeApi = null;
     private List<NoticeModel> noticeList = null;
     private HomepageModel homepageModel;
-
     private final static int HANDLER_HOME_CODE = 3329;
     private final static int HANDLER_NOTICE_CODE = 332229;
     private final static int HANDLER_TIMER_CODE = 992229;
     private static final int REFRESH_COMPLETE = 0X110;
-
     private static final int DOWN_UPDATE = 1;
     private static final int DOWN_OVER = 2;
     private static final int SDCARD_NOT_NOUNTED = 3;
     private static final int SHOW_NOTICE = 5;
     private static final int SHOW_NOTICE_NOTFORCE = 6;
-
-
     private  CustomAppCheckUpdateDialog noticeDialog;
     private Dialog downloadDialog;
     private Thread downLoadThread;
@@ -176,20 +159,20 @@ public class MainActivity extends BaseActivity
     private TimerTask task;
 
     private Handler mHandler = new Handler() {
-        public void handleMessage(android.os.Message msg) {
+        public void handleMessage(Message msg) {
             switch (msg.what) {
                 case HANDLER_HOME_CODE:
                     homeApi.getNoticeList(requestQueue, MainActivity.this, RequestConstant.GET_NOTICE_LIST);
                     break;
                 case HANDLER_NOTICE_CODE:
-                    // WeLearnApi.checkUpdate();
+                    WeLearnApi.checkUpdate();
                     checkWelcomeImage();
                     break;
                 case HANDLER_TIMER_CODE:
                     initData();
                     break;
                 case REFRESH_COMPLETE: // 下拉刷新
-                    mPullRefreshScrollView.onRefreshComplete();
+                    //mPullRefreshScrollView.onRefreshComplete();
                     // ToastUtils.showCustomToast(MainActivity.this, "刷新成功!");
                     break;
                 case SHOW_NOTICE:// 强制升级
@@ -210,15 +193,44 @@ public class MainActivity extends BaseActivity
 
         }
     };
+    private NavigationView nv_main_navigation;
+    private Toolbar toolbar;
+    private DrawerLayout mDrawer;
+    private ActionBarDrawerToggle mDrawerToggle;
+    private NavigationView nav_View;
+    private ConstraintLayout head_View;
+    private CircleImageView drawer_head_img;
+    private TextView drawer_user_name;
+    private ImageView drawer_sex;
+    private TextView drawer_userid;
+    private TextView drawer_experience;
+    private ImageView header_bg;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         GlobalVariable.mainActivity = this;
-        setContentView(R.layout.test_main_activity);
+        setContentView(R.layout.drawer_main_activity);
         initView();
         initListener();
+        updateUiInfo();
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_setting:
+                IntentManager.goToSystemSetting(this);
+                break;
+        }
+        // 返回false允许正常的菜单处理资源，若返回true，则直接在此毁灭它
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -227,27 +239,24 @@ public class MainActivity extends BaseActivity
         doToolbar();
         // 个人信息
         iv_teacher_avatar = (ImageView) this.findViewById(R.id.iv_teacher_avatar);
-        iv_setting = (ImageView) this.findViewById(R.id.iv_setting);
         tv_teacher_name = (TextView) this.findViewById(R.id.tv_teacher_name);
         tv_xuehao = (TextView) this.findViewById(R.id.tv_xuehao);
         tv_xinyong = (TextView) this.findViewById(R.id.tv_xinyong);
 
         // 责任心指数
-        layout_zerenxin = (RelativeLayout) this.findViewById(R.id.layout_zerenxin);
+        tv_head_rule = (TextView) this.findViewById(R.id.tv_head_rule);
         layout_zerenxin_star = (LinearLayout) this.findViewById(R.id.layout_zerenxin_star);
 
         // 学点
-        iv_shuaxinjinbi = (ImageView) this.findViewById(R.id.iv_shuaxinjinbi);
-        layout_gotixian = (RelativeLayout) this.findViewById(R.id.layout_gotixian);
         tv_total_xuedian_val = (TextView) this.findViewById(R.id.tv_total_xuedian_val);
         tv_ketixian_val = (TextView) this.findViewById(R.id.tv_ketixian_val);
         tv_gotixian = (TextView) this.findViewById(R.id.tv_gotixian);
 
         // 有投诉/有追问/待采纳/新消息
-        this.layout_tousu = (RelativeLayout) this.findViewById(R.id.layout_tousu);
-        this.layout_zhuiwen = (RelativeLayout) this.findViewById(R.id.layout_zhuiwen);
-        this.layout_caina = (RelativeLayout) this.findViewById(R.id.layout_caina);
-        this.layout_news_message = (RelativeLayout) this.findViewById(R.id.layout_news_message);
+        this.layout_tousu = (ConstraintLayout) this.findViewById(R.id.layout_tousu);
+        this.layout_zhuiwen = (ConstraintLayout) this.findViewById(R.id.layout_zhuiwen);
+        this.layout_caina = (ConstraintLayout) this.findViewById(R.id.layout_caina);
+        this.layout_news_message = (ConstraintLayout) this.findViewById(R.id.layout_news_message);
 
         this.tv_youtousu = (TextView) this.findViewById(R.id.tv_youtousu);
         this.tv_youzhuiwen = (TextView) this.findViewById(R.id.tv_youzhuiwen);
@@ -255,25 +264,10 @@ public class MainActivity extends BaseActivity
         this.tv_hasxiaoxi = (TextView) this.findViewById(R.id.tv_hasxiaoxi);
 
         // 公告
-        layout_gonggao = (LinearLayout) this.findViewById(R.id.layout_gonggao);
+        layout_gonggao = (ConstraintLayout) this.findViewById(R.id.layout_gonggao);
         tv_gonggao = (TextView) this.findViewById(R.id.tv_gonggao);
-
         iv_qiang = (ImageView) this.findViewById(R.id.iv_qiang);
-
-
-        // 测试LinearLayout高度
-        // final LinearLayout layout_bottom = (LinearLayout)
-        // findViewById(R.id.layout_bottom);
-        // layout_bottom.getViewTreeObserver().addOnGlobalLayoutListener(new
-        // OnGlobalLayoutListener() {
-        // @Override
-        // public void onGlobalLayout() {
-        // ToastUtils.show(layout_gonggao.getHeight() + "");
-        // layout_bottom.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-        //
-        // }
-        // });
-
+        nv_main_navigation = this.findViewById(R.id.nv_main_navigation);
         tv_version = (TextView) this.findViewById(R.id.tv_version);
         // 显示版本
         String phonemodel = android.os.Build.MODEL;
@@ -281,17 +275,17 @@ public class MainActivity extends BaseActivity
         tv_version.setText("当前版本  " + getString(R.string.version_format_str, TecApplication.versionName) + "  "
                 + phonemodel + " (" + androidosversion + ")");
 
-        // 设置下拉加载
+      /*  // 设置下拉加载
         mPullRefreshScrollView = (PullToRefreshScrollView) findViewById(R.id.pull_refresh_scrollview);
         mPullRefreshScrollView.setOnRefreshListener(this);
         mScrollView = mPullRefreshScrollView.getRefreshableView();
         mScrollView.setFillViewport(true);
-        mPullRefreshScrollView.setPullToRefreshEnabled(true);
+        mPullRefreshScrollView.setPullToRefreshEnabled(true);*/
 
         String str = DateUtils.formatDateTime(MainActivity.this, System.currentTimeMillis(),
                 DateUtils.FORMAT_SHOW_TIME | DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_ABBREV_ALL);
 
-        // 设置刷新标签
+      /*  // 设置刷新标签
         mPullRefreshScrollView.getLoadingLayoutProxy().setRefreshingLabel("正在刷新");
         // 设置下拉标签
         mPullRefreshScrollView.getLoadingLayoutProxy().setPullLabel("下拉刷新");
@@ -300,115 +294,84 @@ public class MainActivity extends BaseActivity
         // 设置上一次刷新的提示标签
         mPullRefreshScrollView.getLoadingLayoutProxy().setLastUpdatedLabel("最后更新时间:" + str);
         // 加载数据操作
-        mPullRefreshScrollView.setMode(Mode.PULL_DOWN_TO_REFRESH);
-        // mPullRefreshScrollView.setMode(Mode.PULL_FROM_END);// 向下拉刷新
+        mPullRefreshScrollView.setMode(Mode.PULL_DOWN_TO_REFRESH);*/
 
-        /**
-         * Add Sound Event Listener
-         */
-        // SoundPullEventListener<ScrollView> soundListener = new
-        // SoundPullEventListener<ScrollView>(this);
-        // soundListener.addSoundEvent(State.PULL_TO_REFRESH, R.raw.pull_event);
-        // soundListener.addSoundEvent(State.RESET, R.raw.reset_sound);
-        // soundListener.addSoundEvent(State.REFRESHING,
-        // R.raw.refreshing_sound);
-        // mPullRefreshScrollView.setOnPullEventListener(soundListener);
-
+        userInfo = WLDBHelper.getInstance().getWeLearnDB().queryCurrentUserInfo();
         homeApi = new HomeApI();
         noticeList = new ArrayList<NoticeModel>();
-        // timer.schedule(new TimerTask() {
-        //
-        // @Override
-        // public void run() {
-        // if (TextUtils.isEmpty(homeResult)) {
-        // Message message = new Message();
-        // message.what = HANDLER_TIMER_CODE;
-        // mHandler.sendMessage(message);
-        // }
-        // }
-        // }, 4000);
-
     }
 
     private void doToolbar() {
-        // 左边
-        backLayout = (RelativeLayout) findViewById(R.id.back_layout);
-        backLayout.setOnClickListener(this);
-        ImageView backImageView = (ImageView) findViewById(R.id.back_iv);
-        backImageView.setScaleType(ScaleType.CENTER);
-        backImageView.setImageResource(R.drawable.icon_stu_home_menu_persion_btn_selector);
 
-        //初次显示
-        firstUseTipIV = (ImageView) findViewById(R.id.tips_first_use);
-        if (SharePerfenceUtil.getInstance().isShowFirstUseTip()) {
-            firstUseTipIV.setVisibility(View.VISIBLE);
-            SharePerfenceUtil.getInstance().setFirstUseFalse();
-        } else {
-            firstUseTipIV.setVisibility(View.GONE);
-        }
-
-        // 右边按钮
-        RelativeLayout nextLayout = (RelativeLayout) findViewById(R.id.next_setp_layout);
-        nextLayout.setVisibility(View.VISIBLE);
-        ImageView nextImageView = (ImageView) nextLayout.findViewById(R.id.next_step_img);
-        nextImageView.setVisibility(View.VISIBLE);
-        nextImageView.setImageResource(R.drawable.bg_actionbar_addcontact_selector);
-        nextLayout.setOnClickListener(this);
-
-        unReadMsgPointIv = findViewById(R.id.unread_msg_point_iv_main);
-        firstUseTipIV.setVisibility(View.GONE);
+        toolbar = findViewById(R.id.toolbar);
+        //unReadMsgPointIv = findViewById(R.id.unread_msg_point_iv_main);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         SharePerfenceUtil.getInstance().setFirstUseFalse();
+        initDrawer();
+        initToolbarToogle();
     }
+
+    private void initDrawer() {
+        mDrawer = findViewById(R.id.drawer_container);
+        nav_View = findViewById(R.id.nv_main_navigation);
+        head_View = (ConstraintLayout)nav_View.getHeaderView(0);
+        head_View.findViewById(R.id.header).setOnClickListener(this);
+        //侧拉抽屉信息
+        header_bg = head_View.findViewById(R.id.header_bg);
+        drawer_head_img = head_View.findViewById(R.id.drawer_icon);
+        drawer_user_name = head_View.findViewById(R.id.drawer_user_name);
+        drawer_sex = head_View.findViewById(R.id.drawer_sex);
+        drawer_userid = head_View.findViewById(R.id.drawer_userid);
+        drawer_experience = head_View.findViewById(R.id.drawer_experience);
+    }
+
+    private void initToolbarToogle() {
+        mDrawerToggle = new ActionBarDrawerToggle(MainActivity.this,mDrawer,toolbar,R.string.drawer_open,R.string.drawer_close);
+        mDrawerToggle.setToolbarNavigationClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (null == userInfo) {
+                    ToastUtils.show(R.string.text_unlogin);
+                    return;
+                }
+            }
+        });
+        mDrawerToggle.syncState();
+        mDrawer.addDrawerListener(mDrawerToggle);
+        nav_View.setNavigationItemSelectedListener(this);
+    }
+
 
     @Override
     public void initListener() {
         super.initListener();
-        layout_gotixian.setOnClickListener(this);
         layout_tousu.setOnClickListener(this);
         layout_zhuiwen.setOnClickListener(this);
         layout_caina.setOnClickListener(this);
         layout_news_message.setOnClickListener(this);
         iv_qiang.setOnClickListener(this);
         layout_gonggao.setOnClickListener(this);
-        iv_setting.setOnClickListener(this);
         tv_gotixian.setOnClickListener(this);
         iv_teacher_avatar.setOnClickListener(this);
-        iv_shuaxinjinbi.setOnClickListener(this);
-        layout_zerenxin.setOnClickListener(this);
-
+        tv_head_rule.setOnClickListener(this);
     }
 
     @Override
     public void onResume() {
         super.onResume();
         initData();
-//      WeLearnApi.checkUpdate();
+        WeLearnApi.checkUpdate();
+        WeLearnApi.getUserInfoFromServer(this, this);
         MobclickAgent.onPageStart(this.getClass().getSimpleName());
         IntentManager.startWService(this);
         if (mainMessageController == null) {
             mainMessageController = new MainMessageController(null, MainActivity.this);
         }
-        // if (System.currentTimeMillis() - reflashTime >= 1000) {
-        //
-        // }
-
         showMessageList();
-        reflashTime = System.currentTimeMillis();
-
     }
 
     public void initData() {
-        // if (NetworkUtils.getInstance().isInternetConnected(this)) {
-        // showDialog("正在加载...");
-        // if (homeApi == null) {
-        // homeApi = new HomeApI();
-        // }
-        // homeApi.HomepageInfo(requestQueue, MainActivity.this,
-        // RequestConstant.GET_HOMEPAGE_INFO_CODE);
-        // } else {
-        // ToastUtils.show("网络无法连接，请查看网络");
-        // }
-
         postHomepageInfo();
 
     }
@@ -422,6 +385,58 @@ public class MainActivity extends BaseActivity
         } else {
             ToastUtils.show("网络无法连接，请查看网络");
         }
+
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        menuItem.setChecked(true);
+        switch (menuItem.getItemId()) {
+            case R.id.nav_homework:
+                Intent i = new Intent(this, StuHomeWorkHallActivity.class);
+                i.putExtra("packtype", 3);
+                startActivity(i);
+                break;
+            case R.id.nav_login_out:
+                MobclickAgent.onEvent(this, "logout");
+                // WeLearnApi.logout(this);
+                showDialog(getString(R.string.text_logging_out));
+                OkHttpHelper.post(this, "user", "logout", null, new HttpListener() {
+                    @Override
+                    public void onSuccess(int code, String dataJson, String errMsg) {
+                        cleanUseInfo();
+
+                    }
+
+                    @Override
+                    public void onFail(int HttpCode,String errMsg) {
+                        cleanUseInfo();
+                    }
+                });
+                break;
+            case R.id.nav_question:
+                IntentManager.goToMyQpadActivity(this);
+                break;
+        }
+        return true;
+    }
+
+    private void cleanUseInfo() {
+        IntentManager.stopWService(MainActivity.this);
+        // WApplication.mQQAuth.logout(WApplication.getContext());
+        WLDBHelper.getInstance().getWeLearnDB().deleteCurrentUserInfo();
+        SharePerfenceUtil.getInstance().setWelearnTokenId("");
+        SharePerfenceUtil.getInstance().setTokenId("");
+        SharePerfenceUtil.getInstance().setIsChoicGream(false);
+        SharePerfenceUtil.getInstance().setGradeId(0);
+        SharePerfenceUtil.getInstance().setGoLoginType(-1);
+        SharePerfenceUtil.getInstance().setPhoneNum("");
+        SharePerfenceUtil.getInstance().setAccessToken("");
+        if (GlobalVariable.mainActivity != null) {
+            GlobalVariable.mainActivity.finish();
+        }
+        closeDialog();
+        IntentManager.goToLogInView(MainActivity.this);
 
     }
 
@@ -464,9 +479,12 @@ public class MainActivity extends BaseActivity
                         GlideImageUtils.getInstance().loadAvatarWithActivity(MainActivity.this,
                                 homepageModel.getAvatar(), iv_teacher_avatar);
                         tv_teacher_name.setText(homepageModel.getName());
-                        tv_xuehao.setText(homepageModel.getUserid() + "");
-                        tv_xinyong.setText(homepageModel.getCredit() + "");
-                        tv_total_xuedian_val.setText(homepageModel.getGold() + "");
+                        String str_xuehaoname = getResFormatStr(R.string.str_xuehaoname,homepageModel.getUserid() + "");
+                        tv_xuehao.setText(str_xuehaoname);
+                        String str_xinyu = getResFormatStr(R.string.str_xinyu,homepageModel.getCredit() + "");
+                        tv_xinyong.setText(str_xinyu);
+                        String str_zongxuedian = getResFormatStr(R.string.str_zongxuedian,homepageModel.getGold() + "");
+                        tv_total_xuedian_val.setText(str_zongxuedian);
                         tv_ketixian_val.setText(homepageModel.getAvailable());
                         // 责任心指数
                         layout_zerenxin_star.removeAllViews();
@@ -507,13 +525,15 @@ public class MainActivity extends BaseActivity
     public void onClick(View v) {
         Intent intent = null;
         switch (v.getId()) {
-            case R.id.back_layout:// 返回
-                break;
-            case R.id.next_setp_layout:// 下一步
-                Intent intent1 = new Intent(this, AddContactsActivity.class);
-                startActivity(intent1);
-                break;
             case R.id.iv_teacher_avatar:
+                if (null == userInfo) {
+                    ToastUtils.show(R.string.text_unlogin);
+                    return;
+                }
+                if(!mDrawer.isDrawerOpen(GravityCompat.START))
+                    mDrawer.openDrawer(GravityCompat.START);
+                break;
+            /*case R.id.iv_teacher_avatar:
                 userInfo = WLDBHelper.getInstance().getWeLearnDB().queryCurrentUserInfo();
                 if (null == userInfo) {
                     ToastUtils.show(R.string.text_unlogin);
@@ -523,13 +543,8 @@ public class MainActivity extends BaseActivity
                 data.putInt("userid", userInfo.getUserid());
                 data.putInt("roleid", userInfo.getRoleid());
                 IntentManager.goToTeacherCenterView(this, TeacherCenterActivityNew.class, data);
-                break;
-            case R.id.iv_setting:// 设置
-                IntentManager.goToSystemSetting(this);
-//			Intent ints=new Intent(this, HwReviewActivity.class);
-//			startActivity(ints);
-                break;
-            case R.id.layout_gotixian:
+                break;*/
+            case R.id.tv_ketixian_val:
             case R.id.tv_gotixian:// 提现
                 if (homepageModel != null) {
                     Intent intent_tixian = new Intent(this, MyWalletActivity.class);
@@ -568,15 +583,17 @@ public class MainActivity extends BaseActivity
                 intent = new Intent(this, ResponderActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.iv_shuaxinjinbi:// 刷新金币
+ /*           case R.id.iv_shuaxinjinbi:// 刷新金币
                 initData();
-                break;
+                break;*/
 
-            case R.id.layout_zerenxin://跳转到责任心指数
+            case R.id.tv_head_rule://跳转到责任心指数
                 intent = new Intent(this, ZerenxinRuleActivity.class);
                 startActivity(intent);
                 break;
-
+            case R.id.header:
+                IntentManager.goToStuModifiedInfoActivity(this);
+                break;
         }
     }
 
@@ -589,17 +606,6 @@ public class MainActivity extends BaseActivity
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         if (hasFocus) {
-//            if (mUpdateManager == null) {
-//                if (!isFinishing()) {
-//                    WeakReference<MainActivity> reference = new WeakReference<MainActivity>(MainActivity.this);
-//                    mUpdateManager = new UpdateManagerForDialog(reference.get());
-//                }
-//            }
-//            if (mUpdateManager != null && (System.currentTimeMillis() - checkTime) > 600000) {
-//                mUpdateManager.checkUpdateInfo();
-//                checkTime = System.currentTimeMillis();
-//            }
-
             if ((System.currentTimeMillis() - checkTime) > 600000) {
                 if (NetworkUtils.getInstance().isInternetConnected(MainActivity.this)) {
                     //检测升级
@@ -764,7 +770,6 @@ public class MainActivity extends BaseActivity
         switch (msgDef) {
             case MsgConstant.MSG_DEF_MSGS:
                 showMessageList();
-                reflashTime = System.currentTimeMillis();
                 break;
             case MsgConstant.MSG_NOTICE_CODE:// 通知
                 String dataString = JsonUtils.getString(jsonStr, "data", "");
@@ -822,13 +827,13 @@ public class MainActivity extends BaseActivity
 
             @Override
             public void postTask() {
-                if (MainActivity.unReadMsgPointIv != null) {
-                    if (MainActivity.isShowPoint) {
-                        MainActivity.unReadMsgPointIv.setVisibility(View.VISIBLE);
+               /* if (MainActivity2.unReadMsgPointIv != null) {
+                    if (MainActivity2.isShowPoint) {
+                        MainActivity2.unReadMsgPointIv.setVisibility(View.VISIBLE);
                     } else {
-                        MainActivity.unReadMsgPointIv.setVisibility(View.INVISIBLE);
+                        MainActivity2.unReadMsgPointIv.setVisibility(View.INVISIBLE);
                     }
-                }
+                }*/
                 if (infos != null && infos.size() > 0) {
                     for (int i = 0; i < infos.size(); i++) {
                         final ChatInfo chat = infos.get(i);
@@ -954,10 +959,14 @@ public class MainActivity extends BaseActivity
                             homepageModel = JSON.parseObject(dataJson, HomepageModel.class);
                             GlideImageUtils.getInstance().loadAvatarWithActivity(MainActivity.this,
                                     homepageModel.getAvatar(), iv_teacher_avatar);
+
                             tv_teacher_name.setText(homepageModel.getName());
-                            tv_xuehao.setText(homepageModel.getUserid() + "");
-                            tv_xinyong.setText(homepageModel.getCredit() + "");
-                            tv_total_xuedian_val.setText(homepageModel.getGold() + "");
+                            String str_xuehaoname = getResFormatStr(R.string.str_xuehaoname,homepageModel.getUserid() + "");
+                            tv_xuehao.setText(str_xuehaoname);
+                            String str_xinyu = getResFormatStr(R.string.str_xinyu,homepageModel.getCredit() + "");
+                            tv_xinyong.setText(str_xinyu);
+                            String str_zongxuedian = getResFormatStr(R.string.str_zongxuedian,homepageModel.getGold() + "");
+                            tv_total_xuedian_val.setText(str_zongxuedian);
                             tv_ketixian_val.setText(homepageModel.getAvailable() + "");
 
                             Message msgg = Message.obtain();
@@ -1004,13 +1013,12 @@ public class MainActivity extends BaseActivity
                     // ToastUtils.show("超时，请退出重试");
                     final CustomTixianDialog dialog = new CustomTixianDialog(MainActivity.this, errorStr);
                     dialog.show();
-                    dialog.setButtonListener(new View.OnClickListener() {
+                    dialog.setButtonListener(new OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             dialog.dismiss();
                         }
                     });
-
                 }
                 break;
 
@@ -1263,6 +1271,10 @@ public class MainActivity extends BaseActivity
         }
     };
 
+    public void click_Personal(View v){
+
+    }
+
 
     /**
      * 下载apk
@@ -1300,10 +1312,78 @@ public class MainActivity extends BaseActivity
         if (mainMessageController != null) {
             mainMessageController.removeMsgInQueue();
         }
-        unReadMsgPointIv = null;
+        //unReadMsgPointIv = null;
         mHandler.removeCallbacksAndMessages(null);
         GlobalVariable.mainActivity = null;
-
     }
 
+    @Override
+    public void onSuccess(int code, String dataJson, String errMsg) {
+        if (code == 0) {
+            updateUiInfo();
+        } else {
+            if (!TextUtils.isEmpty(errMsg)) {
+                ToastUtils.show(errMsg);
+            }
+        }
+    }
+
+    @Override
+    public void onFail(int HttpCode,String errMsg) {
+
+    }
+    private UserInfoModel uInfo = null;
+    private void updateUiInfo() {
+        uInfo = WLDBHelper.getInstance().getWeLearnDB().queryCurrentUserInfo();
+
+        if (null == uInfo) {
+            LogUtils.e(TAG, "Contact info gson is null !");
+            return;
+        }
+        // 背景
+        /*
+        String groupphoto = uInfo.getGroupphoto();
+        if (groupphoto == null) {
+            groupphoto = "";
+        }
+        Glide.with(this)
+                .asBitmap()
+                .load(groupphoto)
+                .centerCrop()
+                .placeholder(R.drawable.default_teacher_info_bg)
+                .into(header_bg);*/
+
+        // 头像
+        String avatar_100 = uInfo.getAvatar_100();
+        if (avatar_100 == null) {
+            avatar_100 = "";
+        }
+
+        Glide.with(this).load(avatar_100).centerCrop().placeholder(R.drawable.teacher_default_avatar_circle).into(drawer_head_img);
+
+        String name = TextUtils.isEmpty(uInfo.getName()) ? getString(R.string.persion_info) : uInfo.getName();
+        setWelearnTitle(name);
+        drawer_user_name.setText(name);
+
+        drawer_sex.setVisibility(View.VISIBLE);
+        int sex = uInfo.getSex();
+        switch (sex) {
+            case GlobalContant.SEX_TYPE_MAN:
+                drawer_sex.setSelected(true);
+                break;
+            case GlobalContant.SEX_TYPE_WOMEN:
+                drawer_sex.setSelected(false);
+                break;
+
+            default:
+                drawer_sex.setVisibility(View.GONE);
+                break;
+        }
+        int userid = uInfo.getUserid();
+        drawer_userid.setText(getString(R.string.student_id, userid + ""));
+
+        float credit = uInfo.getCredit();
+        String creditStr = GoldToStringUtil.GoldToString(credit);
+        drawer_experience.setText(getString(R.string.credit_text, creditStr));
+    }
 }

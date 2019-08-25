@@ -14,6 +14,7 @@ import com.ucuxin.ucuxin.tec.base.BaseActivity;
 import com.ucuxin.ucuxin.tec.constant.GlobalContant;
 import com.ucuxin.ucuxin.tec.function.homework.CropImageActivity;
 import com.ucuxin.ucuxin.tec.manager.IntentManager;
+import com.ucuxin.ucuxin.tec.utils.AppUtils;
 import com.ucuxin.ucuxin.tec.utils.MyFileUtil;
 
 import java.io.File;
@@ -70,7 +71,7 @@ public class PayAnswerPhotoViewActivity extends BaseActivity {
 
 			String path = MyFileUtil.getAnswerFile().getAbsolutePath() + File.separator + "publish.png";
 
-			Intent localIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(new File(path)));
+			Intent localIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, AppUtils.getUriForFile(this,new File(path)));
 			sendBroadcast(localIntent);
 
 			localIntent.setClass(this, CropImageActivity.class);

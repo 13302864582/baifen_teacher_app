@@ -51,9 +51,9 @@ public class WelearnDialogBuilder extends Dialog implements DialogInterface {
 
 	private ImageView mIcon;
 
-	private Button mOKBtn;
+	private TextView mOKBtn;
 
-	private Button mCancelBtn;
+	private TextView mCancelBtn;
 
 	private int mDuration = -1;
 
@@ -106,9 +106,7 @@ public class WelearnDialogBuilder extends Dialog implements DialogInterface {
 	}
 
 	private void init(Context context) {
-
 		mDialogView = View.inflate(context, R.layout.general_dialog_layout, null);
-
 		mLinearLayoutView = (LinearLayout) mDialogView.findViewById(R.id.parentPanel);
 		mRelativeLayoutView = (RelativeLayout) mDialogView.findViewById(R.id.main);
 		mLinearLayoutTopView = (LinearLayout) mDialogView.findViewById(R.id.topPanel);

@@ -7,7 +7,5 @@
     android:layout_height="match_parent">
     <include layout="@layout/activity_main_new"/>
 
-
     <include layout="@layout/drawer_content"/>
-
 </androidx.drawerlayout.widget.DrawerLayout>

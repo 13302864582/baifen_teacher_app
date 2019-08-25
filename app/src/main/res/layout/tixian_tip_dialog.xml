@@ -47,11 +47,11 @@
 
             <Button
                 android:id="@+id/btn_ok"
-                android:layout_width="100dp"
-                android:layout_height="35dp"
+                android:layout_width="160dp"
+                android:layout_height="30dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="8dp"
-                android:background="@drawable/btn_login_pre"
+                android:background="@mipmap/btn_login_bg"
                 android:gravity="center"
                 android:text="哦，好吧"
                 android:textColor="#ffffff"

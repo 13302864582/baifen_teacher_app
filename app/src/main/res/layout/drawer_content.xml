@@ -8,6 +8,7 @@
     android:layout_width="@dimen/drawer_width"
     android:layout_height="match_parent"
     app:headerLayout="@layout/drawer_header"
+    app:itemIconTint="@color/color_drawer_text"
     app:itemTextColor="@color/color_drawer_text"
     app:menu="@menu/drawer_menu">
 
